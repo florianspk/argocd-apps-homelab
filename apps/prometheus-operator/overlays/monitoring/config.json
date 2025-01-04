@@ -1,0 +1,11 @@
+{
+  "appName": "prometheus-operator",
+  "userGivenName": "prometheus-operator",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/prometheus-operator/overlays/monitoring",
+  "srcRepoURL": "https://github.com/florianspk/argocd-apps-homelab.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
