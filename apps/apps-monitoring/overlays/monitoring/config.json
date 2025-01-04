@@ -1,7 +1,7 @@
 {
   "appName": "apps-monitoring",
   "userGivenName": "apps-monitoring",
-  "destNamespace": "default",
+  "destNamespace": "monitoring",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/apps-monitoring/overlays/monitoring",
   "srcRepoURL": "https://github.com/florianspk/argocd-apps-homelab.git",
