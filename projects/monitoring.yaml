@@ -87,7 +87,7 @@ spec:
         targetRevision: '{{ srcTargetRevision }}'
       syncPolicy:
         syncOptions:
-        - ServerSideApply='{{ ServerSideApply }}'
+        - ServerSideApply={{ ServerSideApply }}
         automated:
           allowEmpty: true
           prune: true
