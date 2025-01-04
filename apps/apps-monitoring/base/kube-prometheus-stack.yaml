@@ -10,6 +10,10 @@ spec:
     chart: kube-prometheus-stack
     targetRevision: "67.*"
     helm:
+      values: |
+        kube-prometheus-stack:
+          crds:
+            enabled: false
       valueFiles:
         - values.yaml
   destination:
