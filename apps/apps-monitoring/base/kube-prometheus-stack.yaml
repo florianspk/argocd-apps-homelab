@@ -11,6 +11,7 @@ spec:
     targetRevision: "67.*"
     helm:
       valueFiles:
+        - values.yaml
         - $values/values.yaml
   - repoURL: https://github.com/florianspk/values-apps
     path: monitoring/kube-prometheus-stack
