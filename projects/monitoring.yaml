@@ -63,7 +63,9 @@ spec:
               jsonnet: {}
               recurse: true
             repoURL: ""
-  syncPolicy: {}
+  syncPolicy: 
+    syncOptions:
+    - ServerSideApply='{{ ServerSideApply }}'
   template:
     metadata:
       labels:
