@@ -7,5 +7,6 @@
   "srcRepoURL": "https://github.com/florianspk/argocd-apps-homelab.git",
   "srcTargetRevision": "",
   "labels": null,
-  "annotations": null
+  "annotations": null,
+  "ServerSideApply": "true"
 }
