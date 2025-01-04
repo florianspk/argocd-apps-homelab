@@ -12,11 +12,6 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - $values/values.yaml
-  - repoURL: https://github.com/florianspk/values-apps
-    path: monitoring/kube-prometheus-stack
-    targetRevision: main
-    ref: values
   destination:
     server: https://kubernetes.default.svc
     namespace: prometheus
