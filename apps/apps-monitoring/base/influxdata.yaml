@@ -7,7 +7,7 @@ spec:
   project: monitoring
   sources:
   - repoURL: https://helm.influxdata.com/
-    chart: influxdata
+    chart: influxdb
     targetRevision: "4.*"
     helm:
       valueFiles:
