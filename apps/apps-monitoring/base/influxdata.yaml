@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: influxdata
+  namespace: argocd
+spec:
+  project: monitoring
+  sources:
+  - repoURL: https://helm.influxdata.com/
+    chart: influxdata
+    targetRevision: "67.*"
+    helm:
+      valueFiles:
+        - $values/monitoring/influxdata/values.yaml
+  - repoURL: 'https://github.com/florianspk/values-apps.git'
+    targetRevision: HEAD
+    ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
