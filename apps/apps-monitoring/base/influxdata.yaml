@@ -8,7 +8,7 @@ spec:
   sources:
   - repoURL: https://helm.influxdata.com/
     chart: influxdata
-    targetRevision: "67.*"
+    targetRevision: "4.*"
     helm:
       valueFiles:
         - $values/monitoring/influxdata/values.yaml
@@ -21,7 +21,7 @@ spec:
   syncPolicy:
     automated:
       prune: true
-      selfHeal: true
+      selfHeal: false
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
