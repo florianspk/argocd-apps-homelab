@@ -4,11 +4,11 @@ metadata:
   name: ghost
   namespace: argocd
 spec:
-  project: monitoring
+  project: apps-ops
   sources:
   - repoURL: https://charts.bitnami.com/bitnami
     chart: ghost
-    targetRevision: "22.1.2"
+    targetRevision: "22.*"
     helm:
       valueFiles:
         - $values/ops/ghost/values.yaml
