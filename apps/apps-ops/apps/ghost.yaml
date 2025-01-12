@@ -9,12 +9,7 @@ spec:
   - repoURL: https://charts.bitnami.com/bitnami
     chart: ghost
     targetRevision: "22.*"
-    helm:
-      valueFiles:
-        - $values/ops/ghost/values.yaml
-  - repoURL: 'https://github.com/florianspk/values-apps.git'
-    targetRevision: HEAD
-    ref: values
+
   destination:
     server: https://kubernetes.default.svc
     namespace: blog
