@@ -3,7 +3,7 @@
   "userGivenName": "apps-ops",
   "destNamespace": "default",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": ".",
+  "srcPath": "./apps/apps-ops/apps",
   "srcRepoURL": "https://github.com/florianspk/argocd-apps-homelab.git",
   "srcTargetRevision": "",
   "labels": null,

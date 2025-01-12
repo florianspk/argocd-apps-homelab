@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: influxdata
+  namespace: argocd
+spec:
+  project: monitoring
+  sources:
+  - repoURL: https://charts.bitnami.com/bitnami
+    chart: ghost
+    targetRevision: "22.1.2"
+    helm:
+      valueFiles:
+        - $values/ops/ghost/values.yaml
+  - repoURL: 'https://github.com/florianspk/values-apps.git'
+    targetRevision: HEAD
+    ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: blog
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
