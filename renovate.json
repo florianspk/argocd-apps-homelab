@@ -3,6 +3,7 @@
   "regexManagers": [
     {
       "fileMatch": [
+        ".yaml$",
         ".yml$",
         ".hcl$",
         ".tf$",
