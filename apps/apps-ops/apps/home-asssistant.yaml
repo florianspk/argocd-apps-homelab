@@ -1,27 +1,25 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ghost
+  name: home-asssistant
   namespace: argocd
 spec:
   project: apps-ops
   sources:
-  - repoURL: https://charts.bitnami.com/bitnami
-    chart: ghost
-    targetRevision: "22.0.0"
+  - repoURL: http://pajikos.github.io/home-assistant-helm-chart
+    chart: home-asssistant
+    # renovate: datasource=helm depName=home-assistant registryUrl=http://pajikos.github.io/home-assistant-helm-chart
+    targetRevision: "0.2.102"
     helm:
       valueFiles:
-        - $values/ops/ghost/values.yaml
+        - $values/apps-ops/home-assistant/values.yaml
   - repoURL: 'https://github.com/florianspk/values-apps.git'
     targetRevision: HEAD
     ref: values
   destination:
     server: https://kubernetes.default.svc
-    namespace: blog
+    namespace: home-asssistant
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: false
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true

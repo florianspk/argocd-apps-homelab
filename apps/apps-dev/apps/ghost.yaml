@@ -1,24 +1,24 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: influxdata
+  name: ghost
   namespace: argocd
 spec:
-  project: monitoring
+  project: apps-ops
   sources:
-  - repoURL: https://helm.influxdata.com/
-    chart: influxdb2
-    # renovate: datasource=helm depName=influxdb2 registryUrl=https://helm.influxdata.com/
-    targetRevision: "2.1.2"
+  - repoURL: https://charts.bitnami.com/bitnami
+    chart: ghost
+    # renovate: datasource=helm depName=ghost registryUrl=https://charts.bitnami.com/bitnami
+    targetRevision: "22.0.0"
     helm:
       valueFiles:
-        - $values/monitoring/influxdata/values.yaml
+        - $values/ops/ghost/values.yaml
   - repoURL: 'https://github.com/florianspk/values-apps.git'
     targetRevision: HEAD
     ref: values
   destination:
     server: https://kubernetes.default.svc
-    namespace: prometheus
+    namespace: blog
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
