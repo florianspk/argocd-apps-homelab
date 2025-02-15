@@ -9,7 +9,7 @@ spec:
   - repoURL: http://pajikos.github.io/home-assistant-helm-chart
     chart: home-asssistant
     # renovate: datasource=helm depName=home-assistant registryUrl=http://pajikos.github.io/home-assistant-helm-chart
-    targetRevision: "0.2.106"
+    targetRevision: "0.2.108"
     helm:
       valueFiles:
         - $values/apps-ops/home-assistant/values.yaml
