@@ -9,7 +9,7 @@ spec:
   - repoURL: https://charts.bitnami.com/bitnami
     chart: ghost
     # renovate: datasource=helm depName=ghost registryUrl=https://charts.bitnami.com/bitnami
-    targetRevision: "22.1.17"
+    targetRevision: "22.2.6"
     helm:
       valueFiles:
         - $values/ops/ghost/values.yaml
