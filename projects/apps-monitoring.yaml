@@ -82,7 +82,7 @@ status: {}
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: monitoring
+  name: observability
   labels:
     pod-security.kubernetes.io/enforce: privileged
     pod-security.kubernetes.io/enforce-version: latest
