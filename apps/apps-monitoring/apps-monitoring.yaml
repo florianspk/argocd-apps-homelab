@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+  creationTimestamp: null
+  name: apps-monitoring
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      files:
+      - path: apps/apps-monitoring/**/config.json
+      repoURL: https://github.com/florianspk/argocd-apps-homelab.git
+      requeueAfterSeconds: 20
+      revision: ""
+      template:
+        metadata: {}
+        spec:
+          destination: {}
+          project: ""
+  syncPolicy: {}
+  template:
+    metadata:
+      name: {{ appName }}
+      namespace: argocd
+      labels:
+        app.kubernetes.io/managed-by: argocd-autopilot
+        app.kubernetes.io/name: '{{ appName }}'
+    spec:
+      project: apps-monitoring
+      destination:
+        server: '{{ destServer }}'
+        namespace: '{{ destNamespace }}'
+      sources:
+        - repoURL: '{{ chartRepoURL }}'
+          chart: '{{ chart }}'
+          targetRevision: '{{ chartVersion }}'
+          helm:
+            valueFiles:
+              - $values/{{ valuesPath }}
+        - repoURL: '{{ valuesGitRepo }}'
+          targetRevision: '{{ valuesGitRef }}'
+          path: '{{ valuesPath | dirname }}'
+          ref: values
+      syncPolicy:
+        syncOptions:
+          - CreateNamespace=true
+          - ApplyOutOfSyncOnly=true
+        automated:
+          prune: true
+          selfHeal: true
+          allowEmpty: true
+status: {}
