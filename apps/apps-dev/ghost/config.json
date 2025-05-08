@@ -1,12 +1,11 @@
 {
-    "appName": "ghost",
-    "destNamespace": "blog",
-    "destServer": "https://kubernetes.default.svc",
-    "chart": "ghost",
-    "chartRepoURL": "https://charts.bitnami.com/bitnami",
-    "chartVersion": "22.0.0",
-    "valuesPath": "ops/ghost/values.yaml",
-    "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
-    "valuesGitRef": "HEAD"
+  "appName": "metrics-server",
+  "destNamespace": "blog",
+  "destServer": "https://kubernetes.default.svc",
+  "chart": "ghost",
+  "chartRepoURL": "https://charts.bitnami.com/bitnami",
+  "chartVersion": "22.0.0",
+  "valuesPath": "dev/ghost/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
 }
-  

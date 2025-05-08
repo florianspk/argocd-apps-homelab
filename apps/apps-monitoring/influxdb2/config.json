@@ -1,12 +1,11 @@
 {
-    "appName": "influxdb2",
-    "destServer": "https://kubernetes.default.svc",
-    "destNamespace": "observability",
-    "chartRepoURL": "https://helm.influxdata.com/",
-    "chart": "influxdb2",
-    "chartVersion": "2.1.2",
-    "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
-    "valuesPath": "monitoring/influxdata/values.yaml",
-    "valuesGitRef": "HEAD"
-  }
-  
+  "appName": "influxdb2",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "observability",
+  "chartRepoURL": "https://helm.influxdata.com/",
+  "chart": "influxdb2",
+  "chartVersion": "2.1.2",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "monitoring/influxdb/values.yaml",
+  "valuesGitRef": "HEAD"
+}
