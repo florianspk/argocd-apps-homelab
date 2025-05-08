@@ -4,7 +4,7 @@
   "destServer": "https://kubernetes.default.svc",
   "chart": "metrics-server",
   "chartRepoURL": "https://kubernetes-sigs.github.io/metrics-server",
-  "chartVersion": "0.7.2",
+  "chartVersion": "3.12.2",
   "valuesPath": "ops/metrics-server/values.yaml",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesGitRef": "HEAD"
