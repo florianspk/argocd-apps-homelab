@@ -1,12 +1,12 @@
 {
-    "appName": "influxdb2",
+    "appName": "cloudflare-tunnel",
     "destServer": "https://kubernetes.default.svc",
-    "destNamespace": "observability",
+    "destNamespace": "cloudflare-tunnel",
     "chartRepoURL": "https://helm.influxdata.com/",
-    "chart": "influxdb2",
-    "chartVersion": "2.1.2",
+    "chart": "cloudflare-tunnel",
+    "chartVersion": "0.8.*",
     "valuesGitRepo": "https://github.com/florianspk/values-apps.git",
-    "valuesPath": "monitoring/influxdata/values.yaml",
+    "valuesPath": "ops/cloudflare-tunnel/values.yaml",
     "valuesGitRef": "HEAD"
-  }
+}
   
