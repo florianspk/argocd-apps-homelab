@@ -1,5 +1,5 @@
 {
-  "appName": "metrics-server",
+  "appName": "ghost",
   "destNamespace": "blog",
   "destServer": "https://kubernetes.default.svc",
   "chart": "ghost",
