@@ -67,7 +67,7 @@ spec:
               - $values/{{ valuesPath }}
         - repoURL: '{{ valuesGitRepo }}'
           targetRevision: '{{ valuesGitRef }}'
-          path: '{{ valuesPath | dirname }}'
+          path: '{{ valuesPath }}'
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
