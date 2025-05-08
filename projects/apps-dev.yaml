@@ -53,7 +53,7 @@ spec:
         app.kubernetes.io/managed-by: argocd-autopilot
         app.kubernetes.io/name: '{{ appName }}'
     spec:
-      project: apps-dev
+      project: default
       destination:
         server: '{{ destServer }}'
         namespace: '{{ destNamespace }}'
