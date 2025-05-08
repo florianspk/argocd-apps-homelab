@@ -33,8 +33,7 @@ spec:
   project: apps-ops
   source:
     repoURL: https://github.com/florianspk/argocd-apps-homelab.git
-    directory:
-      path: apps/apps-ops
+    path: apps/apps-ops
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

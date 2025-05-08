@@ -32,8 +32,7 @@ spec:
   project: apps-dev
   source:
     repoURL: https://github.com/florianspk/argocd-apps-homelab.git
-    directory:
-      path: apps/apps-dev
+    path: apps/apps-dev
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
