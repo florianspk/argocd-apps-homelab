@@ -6,7 +6,7 @@
     "chartRepoURL": "https://prometheus-community.github.io/helm-charts",
     "chartVersion": "67.*",
     "valuesPath": "monitoring/kube-prometheus-stack/values.yaml",
-    "valuesGitRepo": "https://github.com/florianspk/values-apps.git",
+    "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
     "valuesGitRef": "HEAD"
 }
   

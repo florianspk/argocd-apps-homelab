@@ -2,10 +2,10 @@
     "appName": "cloudflare-tunnel",
     "destServer": "https://kubernetes.default.svc",
     "destNamespace": "cloudflare-tunnel",
-    "chartRepoURL": "https://helm.influxdata.com/",
+    "chartRepoURL": "https://charts.plcnk.net",
     "chart": "cloudflare-tunnel",
     "chartVersion": "0.8.*",
-    "valuesGitRepo": "https://github.com/florianspk/values-apps.git",
+    "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
     "valuesPath": "ops/cloudflare-tunnel/values.yaml",
     "valuesGitRef": "HEAD"
 }
