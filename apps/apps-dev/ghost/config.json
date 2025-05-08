@@ -8,5 +8,5 @@
     "valuesPath": "ops/ghost/values.yaml",
     "valuesGitRepo": "https://github.com/florianspk/values-apps.git",
     "valuesGitRef": "HEAD"
-  }
+}
   
