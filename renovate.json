@@ -1,12 +1,13 @@
 {
   "regexManagers": [
     {
-      "fileMatch": ["^apps/.+/config\\.json$"],
+      "fileMatch": ["\\.json$"],
       "matchStrings": [
-        "\"chart\":\\s*\"(?<depName>[^\"]+)\"[\\s\\S]*?\"chartVersion\":\\s*\"(?<currentValue>[^\"]+)\""
+        "\"chartRepoURL\":\\s*\"(?<registryUrl>[^\"]+)\",\\s*\"chart\":\\s*\"(?<depName>[^\"]+)\",\\s*\"chartVersion\":\\s*\"(?<currentValue>[^\"]+)\""
       ],
       "datasourceTemplate": "helm",
-      "versioningTemplate": "helm"
+      "depNameTemplate": "{{depName}}",
+      "registryUrlTemplate": "{{registryUrl}}"
     }
   ]
 }

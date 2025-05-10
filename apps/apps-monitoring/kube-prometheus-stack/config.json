@@ -1,12 +1,11 @@
 {
-    "appName": "kube-prometheus-stack",
-    "destNamespace": "observability",
-    "destServer": "https://kubernetes.default.svc",
-    "chart": "kube-prometheus-stack",
-    "chartRepoURL": "https://prometheus-community.github.io/helm-charts",
-    "chartVersion": "67.*",
-    "valuesPath": "monitoring/kube-prometheus-stack/values.yaml",
-    "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
-    "valuesGitRef": "HEAD"
+  "appName": "kube-prometheus-stack",
+  "destNamespace": "observability",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "https://prometheus-community.github.io/helm-charts",
+  "chart": "kube-prometheus-stack",
+  "chartVersion": "67.*",
+  "valuesPath": "monitoring/kube-prometheus-stack/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
 }
-  
