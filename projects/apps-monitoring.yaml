@@ -1,29 +1,4 @@
 apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  annotations:
-    argocd-autopilot.argoproj-labs.io/default-dest-server: https://kubernetes.default.svc
-    argocd.argoproj.io/sync-options: PruneLast=true
-    argocd.argoproj.io/sync-wave: "-2"
-  creationTimestamp: null
-  name: apps-monitoring
-  namespace: argocd
-spec:
-  clusterResourceWhitelist:
-    - group: "*"
-      kind: "*"
-  description: apps-monitoring project
-  destinations:
-    - namespace: "*"
-      server: "*"
-  namespaceResourceWhitelist:
-    - group: "*"
-      kind: "*"
-  sourceRepos:
-    - "*"
-status: {}
----
-apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   annotations:

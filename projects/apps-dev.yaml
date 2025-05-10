@@ -1,29 +1,4 @@
 apiVersion: argoproj.io/v1alpha1
-kind: AppProject
-metadata:
-  annotations:
-    argocd-autopilot.argoproj-labs.io/default-dest-server: https://kubernetes.default.svc
-    argocd.argoproj.io/sync-options: PruneLast=true
-    argocd.argoproj.io/sync-wave: "-2"
-  creationTimestamp: null
-  name: apps-dev
-  namespace: argocd
-spec:
-  clusterResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  description: apps-dev project
-  destinations:
-  - namespace: '*'
-    server: '*'
-  namespaceResourceWhitelist:
-  - group: '*'
-    kind: '*'
-  sourceRepos:
-  - '*'
-status: {}
----
-apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   annotations:
@@ -33,39 +8,39 @@ metadata:
   namespace: argocd
 spec:
   generators:
-  - git:
-      files:
-      - path: apps/apps-dev/**/config.json
-      repoURL: https://github.com/florianspk/argocd-apps-homelab.git
-      requeueAfterSeconds: 20
-      revision: ""
-      template:
-        metadata: {}
-        spec:
-          destination: {}
-          project: ""
+    - git:
+        files:
+          - path: apps/apps-dev/**/config.json
+        repoURL: https://github.com/florianspk/argocd-apps-homelab.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
   syncPolicy: {}
   template:
     metadata:
-      name: '{{ appName }}'
+      name: "{{ appName }}"
       namespace: argocd
       labels:
         app.kubernetes.io/managed-by: argocd-autopilot
-        app.kubernetes.io/name: '{{ appName }}'
+        app.kubernetes.io/name: "{{ appName }}"
     spec:
       project: default
       destination:
-        server: '{{ destServer }}'
-        namespace: '{{ destNamespace }}'
+        server: "{{ destServer }}"
+        namespace: "{{ destNamespace }}"
       sources:
-        - repoURL: '{{ chartRepoURL }}'
-          chart: '{{ chart }}'
-          targetRevision: '{{ chartVersion }}'
+        - repoURL: "{{ chartRepoURL }}"
+          chart: "{{ chart }}"
+          targetRevision: "{{ chartVersion }}"
           helm:
             valueFiles:
               - $values/{{ valuesPath }}
-        - repoURL: '{{ valuesGitRepo }}'
-          targetRevision: '{{ valuesGitRef }}'
+        - repoURL: "{{ valuesGitRepo }}"
+          targetRevision: "{{ valuesGitRef }}"
           ref: values
       syncPolicy:
         syncOptions:
