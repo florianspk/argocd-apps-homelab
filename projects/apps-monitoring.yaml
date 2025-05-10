@@ -77,12 +77,3 @@ spec:
           selfHeal: true
           allowEmpty: true
 status: {}
----
-# To add annotation pod-security.kubernetes.io/enforce: privileged
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: observability
-  labels:
-    pod-security.kubernetes.io/enforce: privileged
-    pod-security.kubernetes.io/enforce-version: latest
