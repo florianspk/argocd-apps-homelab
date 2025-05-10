@@ -23,7 +23,6 @@ spec:
     path: projects
     repoURL: https://github.com/florianspk/argocd-apps-homelab.git
   syncPolicy:
-    automated: {}
     syncOptions:
       - allowEmpty=true
 status:
