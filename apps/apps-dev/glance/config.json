@@ -1,0 +1,11 @@
+{
+  "appName": "glance",
+  "destNamespace": "glance",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "https://rubxkube.github.io/charts/",
+  "chart": "glance",
+  "chartVersion": "*",
+  "valuesPath": "dev/glance/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
