@@ -1,5 +1,6 @@
 {
   "appName": "influxdb2",
+  "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "observability",
   "chartRepoURL": "https://helm.influxdata.com/",

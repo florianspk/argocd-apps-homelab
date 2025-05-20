@@ -1,0 +1,12 @@
+{
+  "name": "cilium",
+  "server": "https://kubernetes.default.svc",
+  "env": "prd",
+  "destNamespace": "kube-system",
+  "chartRepoURL": "https://helm.cilium.io",
+  "chart": "cilium",
+  "chartVersion": "1.17.4",
+  "valuesPath": "helm/cilium-values.yaml",
+  "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
+  "valuesGitRef": "HEAD"
+}

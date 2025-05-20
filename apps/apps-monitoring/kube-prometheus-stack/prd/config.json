@@ -1,5 +1,6 @@
 {
   "appName": "kube-prometheus-stack",
+  "env": "prd",
   "destNamespace": "observability",
   "destServer": "https://kubernetes.default.svc",
   "chartRepoURL": "https://prometheus-community.github.io/helm-charts",

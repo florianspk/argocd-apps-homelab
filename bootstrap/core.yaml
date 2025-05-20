@@ -4,13 +4,13 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
   creationTimestamp: null
-  name: cluster-resources
+  name: core
   namespace: argocd
 spec:
   generators:
     - git:
         files:
-          - path: bootstrap/cluster-resources/*.json
+          - path: bootstrap/core/**/*.json
         repoURL: https://github.com/florianspk/argocd-apps-homelab.git
         requeueAfterSeconds: 20
         revision: ""
@@ -24,13 +24,13 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: name-{{name}}
-      name: cluster-resources-{{name}}
+        app.kubernetes.io/name: "{{name}}"
+        app.kubernetes.io/env: "{{env}}"
+      name: "{{name}}-{{env}}"
       namespace: argocd
     spec:
       destination:
         server: "{{server}}"
-        namespace: "{{ destNamespace }}"
       ignoreDifferences:
         - group: argoproj.io
           jsonPointers:
@@ -40,6 +40,16 @@ spec:
       source:
         path: bootstrap/cluster-resources/{{name}}
         repoURL: https://github.com/florianspk/argocd-apps-homelab.git
+      sources:
+        - repoURL: "{{ chartRepoURL }}"
+          chart: "{{ chart }}"
+          targetRevision: "{{ chartVersion }}"
+          helm:
+            valueFiles:
+              - $values/{{ valuesPath }}
+        - repoURL: "{{ valuesGitRepo }}"
+          targetRevision: "{{ valuesGitRef }}"
+          ref: values
       syncPolicy:
         automated:
           allowEmpty: true

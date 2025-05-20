@@ -22,11 +22,12 @@ spec:
   syncPolicy: {}
   template:
     metadata:
-      name: "{{ appName }}"
+      name: "{{ appName }}-{{ env }}"
       namespace: argocd
       labels:
-        app.kubernetes.io/managed-by: argocd-autopilot
+        app.kubernetes.io/type: "apps-monitoring"
         app.kubernetes.io/name: "{{ appName }}"
+        app.kubernetes.io/env: "{{ env }}"
     spec:
       project: default
       destination:

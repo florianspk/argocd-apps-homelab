@@ -1,5 +1,6 @@
 {
   "appName": "glance",
+  "env": "prd",
   "destNamespace": "glance",
   "destServer": "https://kubernetes.default.svc",
   "chartRepoURL": "https://rubxkube.github.io/charts/",

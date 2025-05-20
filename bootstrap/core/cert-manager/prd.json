@@ -1,0 +1,12 @@
+{
+  "name": "cert-manager",
+  "server": "https://kubernetes.default.svc",
+  "env": "prd",
+  "destNamespace": "cert-manager",
+  "chartRepoURL": "https://charts.jetstack.io",
+  "chart": "cert-manager",
+  "chartVersion": "1.17.2",
+  "valuesPath": "helm/cert-manager-values.yaml",
+  "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
+  "valuesGitRef": "HEAD"
+}

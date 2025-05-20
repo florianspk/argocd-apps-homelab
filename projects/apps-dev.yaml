@@ -10,7 +10,7 @@ spec:
   generators:
     - git:
         files:
-          - path: apps/apps-dev/**/config.json
+          - path: apps/apps-dev/**/**/config.json
         repoURL: https://github.com/florianspk/argocd-apps-homelab.git
         requeueAfterSeconds: 20
         revision: ""
@@ -22,11 +22,12 @@ spec:
   syncPolicy: {}
   template:
     metadata:
-      name: "{{ appName }}"
+      name: "{{ appName }}-{{ env }}"
       namespace: argocd
       labels:
-        app.kubernetes.io/managed-by: argocd-autopilot
+        app.kubernetes.io/type: "apps-dev"
         app.kubernetes.io/name: "{{ appName }}"
+        app.kubernetes.io/env: "{{ env }}"
     spec:
       project: default
       destination:

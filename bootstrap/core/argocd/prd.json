@@ -1,0 +1,12 @@
+{
+  "name": "argocd",
+  "server": "https://kubernetes.default.svc",
+  "env": "prd",
+  "destNamespace": "argocd",
+  "chartRepoURL": "https://argoproj.github.io/argo-helm",
+  "chart": "argo-cd",
+  "chartVersion": "8.0.4",
+  "valuesPath": "helm/argocd-values.yaml",
+  "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
+  "valuesGitRef": "HEAD"
+}

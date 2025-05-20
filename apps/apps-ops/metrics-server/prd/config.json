@@ -1,5 +1,6 @@
 {
   "appName": "metrics-server",
+  "env": "prd",
   "destNamespace": "kube-system",
   "destServer": "https://kubernetes.default.svc",
   "chartRepoURL": "https://kubernetes-sigs.github.io/metrics-server",

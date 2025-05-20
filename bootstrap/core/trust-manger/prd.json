@@ -1,0 +1,12 @@
+{
+  "name": "trust-manager",
+  "server": "https://kubernetes.default.svc",
+  "env": "prd",
+  "destNamespace": "cert-manager",
+  "chartRepoURL": "https://charts.jetstack.io",
+  "chart": "trust-manager",
+  "chartVersion": "0.17.1",
+  "valuesPath": "helm/trust-manager-values.yaml",
+  "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
+  "valuesGitRef": "HEAD"
+}

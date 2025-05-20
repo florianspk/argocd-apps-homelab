@@ -1,0 +1,12 @@
+{
+  "appName": "cloudflare-tunnel",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "cloudflare-tunnel",
+  "chartRepoURL": "https://charts.plcnk.net",
+  "chart": "cloudflare-tunnel",
+  "chartVersion": "0.9.*",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/cloudflare-tunnel/values.yaml",
+  "valuesGitRef": "HEAD"
+}

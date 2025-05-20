@@ -1,0 +1,4 @@
+{
+  "name": "prd",
+  "server": "https://kubernetes.default.svc"
+}
