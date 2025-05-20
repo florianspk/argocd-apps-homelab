@@ -31,6 +31,7 @@ spec:
     spec:
       destination:
         server: "{{server}}"
+        namespace: "{{destNamespace}}"
       ignoreDifferences:
         - group: argoproj.io
           jsonPointers:
