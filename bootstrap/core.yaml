@@ -46,7 +46,7 @@ spec:
           chart: "{{ chart }}"
           targetRevision: "{{ chartVersion }}"
           helm:
-            releaseName: "{{appName}}"
+            releaseName: "{{name}}"
             valueFiles:
               - $values/{{ valuesPath }}
         - repoURL: "{{ valuesGitRepo }}"
