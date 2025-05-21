@@ -17,53 +17,9 @@ spec:
       jsonPointers:
         - /status
       kind: Application
-    - group: argoproj.io
-      kind: Application
-      jqPathExpressions:
-        - '.metadata.annotations."argocd.argoproj.io/tracking-id"'
   project: default
   source:
     path: projects
-    repoURL: https://github.com/florianspk/argocd-apps-homelab.git
-  syncPolicy:
-    syncOptions:
-      - allowEmpty=true
-status:
-  health: {}
-  summary: {}
-  sync:
-    comparedTo:
-      destination: {}
-      source:
-        repoURL: ""
-    status: ""
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  creationTimestamp: null
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
-  labels:
-    app.kubernetes.io/name: root
-  name: apps-bootstrap
-  namespace: argocd
-spec:
-  destination:
-    namespace: argocd
-    server: https://kubernetes.default.svc
-  ignoreDifferences:
-    - group: argoproj.io
-      jsonPointers:
-        - /status
-      kind: Application
-    - group: argoproj.io
-      kind: Application
-      jqPathExpressions:
-        - '.metadata.annotations."argocd.argoproj.io/tracking-id"'
-  project: default
-  source:
-    path: bootstrap
     repoURL: https://github.com/florianspk/argocd-apps-homelab.git
   syncPolicy:
     syncOptions:
