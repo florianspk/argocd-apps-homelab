@@ -17,6 +17,10 @@ spec:
       jsonPointers:
         - /status
       kind: Application
+    - group: argoproj.io
+      kind: Application
+      jqPathExpressions:
+        - '.metadata.annotations."argocd.argoproj.io/tracking-id"'
   project: default
   source:
     path: projects
@@ -53,6 +57,10 @@ spec:
       jsonPointers:
         - /status
       kind: Application
+    - group: argoproj.io
+      kind: Application
+      jqPathExpressions:
+        - '.metadata.annotations."argocd.argoproj.io/tracking-id"'
   project: default
   source:
     path: bootstrap
