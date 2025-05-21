@@ -54,7 +54,7 @@ spec:
           ref: values
         - repoURL: https://github.com/florianspk/argocd-apps-homelab.git
           targetRevision: HEAD
-          path: bootstrap/apps-ops/{{appName}}/extras
+          path: bootstrap/core/{{name}}/extras
           directory:
             recurse: true
       syncPolicy:
