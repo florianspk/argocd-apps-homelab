@@ -52,6 +52,11 @@ spec:
         - repoURL: "{{ valuesGitRepo }}"
           targetRevision: "{{ valuesGitRef }}"
           ref: values
+        - repoURL: https://github.com/florianspk/argocd-apps-homelab.git
+          targetRevision: HEAD
+          path: bootstrap/apps-ops/{{appName}}/extras
+          directory:
+            recurse: true
       syncPolicy:
         automated:
           allowEmpty: true
