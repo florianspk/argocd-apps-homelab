@@ -1,0 +1,48 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+  creationTimestamp: null
+  name: extra-crd
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        files:
+          - path: bootstrap/extra-crd/*.json
+        repoURL: https://github.com/florianspk/argocd-apps-homelab.git
+        requeueAfterSeconds: 20
+        revision: ""
+        template:
+          metadata: {}
+          spec:
+            destination: {}
+            project: ""
+  syncPolicy:
+    preserveResourcesOnDeletion: true
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: name-{{name}}
+      name: extra-crd-{{name}}
+      namespace: argocd
+    spec:
+      destination:
+        server: "{{server}}"
+        namespace: "{{ destNamespace }}"
+      ignoreDifferences:
+        - group: argoproj.io
+          jsonPointers:
+            - /status
+          kind: Application
+      project: default
+      source:
+        path: bootstrap/extra-crd/{{name}}
+        repoURL: https://github.com/florianspk/argocd-apps-homelab.git
+        kustomize: {}
+      syncPolicy:
+        automated:
+          allowEmpty: true
+          selfHeal: false
+status: {}

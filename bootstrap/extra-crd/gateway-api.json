@@ -1,0 +1,4 @@
+{
+  "name": "gateway-api",
+  "server": "https://kubernetes.default.svc"
+}
