@@ -1,4 +1,5 @@
 {
   "name": "gateway-api",
-  "server": "https://kubernetes.default.svc"
+  "server": "https://kubernetes.default.svc",
+  "destNamespace": "kube-system"
 }
