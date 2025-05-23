@@ -40,6 +40,7 @@ spec:
       source:
         path: bootstrap/extra-crd/{{name}}
         repoURL: https://github.com/florianspk/argocd-apps-homelab.git
+        targetRevision: HEAD
         kustomize: {}
       syncPolicy:
         automated:
