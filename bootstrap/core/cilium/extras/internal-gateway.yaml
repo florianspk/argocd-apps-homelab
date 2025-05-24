@@ -6,20 +6,16 @@ metadata:
 spec:
   gatewayClassName: cilium
   listeners:
-    - name: http-internal
+    - name: http
       port: 80
       protocol: HTTP
-      allowedRoutes:
-        namespaces:
-          from: All
-    - name: https-internal
+      hostname: "*.wheezy.lab"
+    - name: https
       port: 443
       protocol: HTTPS
-      allowedRoutes:
-        namespaces:
-          from: All
+      hostname: "*.wheezy.lab"
       tls:
         mode: Terminate
         certificateRefs:
-          - name: internal-tls-cert
-            kind: Secret
+          - name: wildcard-wheezy-lab-tls
+            namespace: kube-system
