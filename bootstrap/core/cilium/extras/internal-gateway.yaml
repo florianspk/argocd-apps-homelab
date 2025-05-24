@@ -9,6 +9,9 @@ spec:
       port: 80
       protocol: HTTP
       hostname: "*.wheezy.lab"
+      allowedRoutes:
+        namespaces:
+          from: All
     - name: https
       port: 443
       protocol: HTTPS
@@ -18,3 +21,6 @@ spec:
         certificateRefs:
           - name: wildcard-wheezy-lab-tls
             namespace: kube-system
+      allowedRoutes:
+        namespaces:
+          from: All
