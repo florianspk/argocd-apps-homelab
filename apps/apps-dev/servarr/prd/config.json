@@ -1,0 +1,12 @@
+{
+  "appName": "servarr",
+  "env": "prd",
+  "destNamespace": "servarr",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "https://charts.kubito.dev",
+  "chart": "servarr",
+  "chartVersion": "1.1.*",
+  "valuesPath": "dev/servarr/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
