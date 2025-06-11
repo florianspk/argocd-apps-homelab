@@ -5,7 +5,7 @@
   "destNamespace": "cloudflare-tunnel",
   "chartRepoURL": "https://charts.plcnk.net",
   "chart": "cloudflare-tunnel",
-  "chartVersion": "0.10.*",
+  "chartVersion": "0.11.*",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/cloudflare-tunnel/values.yaml",
   "valuesGitRef": "HEAD"
