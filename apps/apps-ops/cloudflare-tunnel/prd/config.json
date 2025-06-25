@@ -3,9 +3,9 @@
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "cloudflare-tunnel",
-  "chartRepoURL": "https://charts.plcnk.net",
-  "chart": "cloudflare-tunnel",
-  "chartVersion": "0.10.*",
+  "chartRepoURL": "https://cloudflare.github.io/helm-charts",
+  "chart": "cloudflare-tunnel-remote",
+  "chartVersion": "0.1.*",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/cloudflare-tunnel/values.yaml",
   "valuesGitRef": "HEAD"
