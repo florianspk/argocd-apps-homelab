@@ -1,0 +1,15 @@
+# ServiceMonitor pour Prometheus (optionnel)
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kavita-servicemonitor
+  labels:
+    app: kavita
+spec:
+  selector:
+    matchLabels:
+      app: kavita
+  endpoints:
+    - port: http
+      interval: 30s
+      path: /metrics

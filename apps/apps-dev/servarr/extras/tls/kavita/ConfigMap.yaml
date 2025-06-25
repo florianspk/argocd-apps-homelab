@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kavita-config
+  labels:
+    app: kavita
+data:
+  TZ: "Europe/Paris"
+  PUID: "1000"
+  PGID: "1000"
