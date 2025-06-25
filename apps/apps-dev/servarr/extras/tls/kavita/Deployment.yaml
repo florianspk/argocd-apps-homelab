@@ -16,6 +16,18 @@ spec:
       labels:
         app: kavita
     spec:
+      initContainers:
+        - name: create-user
+          image: busybox:latest
+          command: ["sh", "-c"]
+          args:
+            - |
+              echo "kavita:x:1000:1000:Kavita User:/home/kavita:/bin/sh" >> /etc/passwd
+              echo "kavita:x:1000:" >> /etc/group
+              mkdir -p /home/kavita
+              chown 1000:1000 /home/kavita
+          securityContext:
+            runAsUser: 0
       securityContext:
         runAsUser: 1000
         runAsGroup: 1000
