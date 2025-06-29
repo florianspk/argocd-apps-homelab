@@ -1,0 +1,12 @@
+{
+  "appName": "homepage",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "observability",
+  "chartRepoURL": "oci://ghcr.io/m0nsterrr/helm-charts/homepage",
+  "chart": "homepage",
+  "chartVersion": "4.0.0",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "monitoring/homepage/values.yaml",
+  "valuesGitRef": "HEAD"
+}
