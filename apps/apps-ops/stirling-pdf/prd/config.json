@@ -5,7 +5,7 @@
   "destNamespace": "tools",
   "chartRepoURL": "https://rubxkube.github.io/charts/",
   "chart": "stirling-pdf",
-  "chartVersion": "4.0.18",
+  "chartVersion": "0.0.7",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/stirling-pdf/values.yaml",
   "valuesGitRef": "HEAD"
