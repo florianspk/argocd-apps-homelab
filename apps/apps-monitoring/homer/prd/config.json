@@ -1,12 +1,12 @@
 {
-  "appName": "homepage",
+  "appName": "homer",
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "observability",
-  "chartRepoURL": "oci://ghcr.io/m0nsterrr/helm-charts/homepage",
-  "chart": "homepage",
-  "chartVersion": "4.0.0",
+  "chartRepoURL": "https://charts.gabe565.com",
+  "chart": "homer",
+  "chartVersion": "0.13.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
-  "valuesPath": "monitoring/homepage/values.yaml",
+  "valuesPath": "monitoring/homer/values.yaml",
   "valuesGitRef": "HEAD"
 }
