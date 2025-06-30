@@ -3,9 +3,9 @@
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "observability",
-  "chartRepoURL": "https://bjw-s-labs.github.io/helm-charts/",
+  "chartRepoURL": "https://rubxkube.github.io/common-charts/",
   "chart": "common",
-  "chartVersion": "4.1.2",
+  "chartVersion": "v0.4.5",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "monitoring/homepage/values.yaml",
   "valuesGitRef": "HEAD"
