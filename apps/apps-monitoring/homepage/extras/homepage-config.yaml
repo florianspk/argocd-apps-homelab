@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+  namespace: homepage
+data:
+  config.yaml: |
+    title: "HomeLab wheezy"
+    theme: dark
+    layout:
+      - Multimédia
+      - Système
+      - DevOps
+      - Monitoring
+
+  services.yaml: |
+    - Multimédia:
+        - Jellyfin:
+            href: https://tv.wheezy.fr
+            icon: jellyfin
+        - Jellyseerr:
+            href: https://movies.wheezy.fr
+            icon: jellyseerr
+        - Radarr:
+            href: https://radarr.wheezy.lab
+            icon: radarr
+        - qBittorrent:
+            href: http://qbittorrent.wheezy.lab
+            icon: qbittorrent
+
+    - Système:
+        - Glances:
+            href: https://glance.wheezy.lab/
+            icon: glances
+        - Proxmox Node 1:
+            href: https://pve01.wallaby-marlin.ts.net:8006
+            icon: proxmox
+        - Proxmox Node 2:
+            href: https://pve02.wallaby-marlin.ts.net:8006
+            icon: proxmox
+
+    - DevOps:
+        - Argo CD:
+            href: https://argocd.wheezy.lab
+            icon: argocd
+
+    - Monitoring:
+        - Grafana:
+            href: https://grafana.wheezy.lab
+            icon: grafana
+        - Prometheus:
+            href: https://prometheus.wheezy.lab
+            icon: prometheus
+        - Alertmanager:
+            href: https://alertmanager.wheezy.lab
+            icon: alertmanager
+        - influxdb:
+            href: https://influxdb.wheezy.lab
+            icon: influxdb
+  widgets.yaml: |
+    - resources:
+        cpu: true
+        memory: true
+        disk: /
+    - docker:
+        socket: /var/run/docker.sock
+    - glances:
+        url: https://glance.wheezy.lab/
+    - argocd:
+        url: http://argocd-server.argocd.svc.cluster.local
+        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjphcGlLZXkiLCJuYmYiOjE3NTEyNjY1NTAsImlhdCI6MTc1MTI2NjU1MCwianRpIjoiMGJhMTBkYTAtYWM0NS00YTZmLTg1NzMtN2FlYWRlNzYzN2M2In0.HfxWv3APRNZC2RtRcrfvXuomKbrCbz40w16W_MUM-6k
+
+  bookmarks.yaml: |
+    - Docs:
+        - Argo CD:
+            href: https://argo-cd.readthedocs.io/
+        - Kubernetes Docs:
+            href: https://kubernetes.io/docs/
