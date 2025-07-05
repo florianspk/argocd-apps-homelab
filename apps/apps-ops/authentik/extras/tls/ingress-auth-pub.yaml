@@ -37,7 +37,7 @@ spec:
                 port:
                   number: 80
           - path: /application/o/.well-known/
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: authentik-server
