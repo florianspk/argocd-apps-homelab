@@ -1,0 +1,12 @@
+{
+  "appName": "sealed-secrets",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "kube-system",
+  "chartRepoURL": "https://bitnami-labs.github.io/sealed-secrets/",
+  "chart": "sealed-secrets",
+  "chartVersion": "2.17.3",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/sealed-secrets/values.yaml",
+  "valuesGitRef": "HEAD"
+}
