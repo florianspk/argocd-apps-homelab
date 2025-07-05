@@ -8,21 +8,7 @@ spec:
     - host: auth.wheezy.fr
       http:
         paths:
-          - path: /application/o/authorize/
-            pathType: Prefix
-            backend:
-              service:
-                name: authentik-server
-                port:
-                  number: 80
-          - path: /application/o/token/
-            pathType: Prefix
-            backend:
-              service:
-                name: authentik-server
-                port:
-                  number: 80
-          - path: /application/o/userinfo/
+          - path: /application/o/
             pathType: Prefix
             backend:
               service:
@@ -30,27 +16,6 @@ spec:
                 port:
                   number: 80
           - path: /source/oauth/callback/
-            pathType: Prefix
-            backend:
-              service:
-                name: authentik-server
-                port:
-                  number: 80
-          - path: /application/o/.well-known/
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: authentik-server
-                port:
-                  number: 80
-          - path: /application/o/jwks/
-            pathType: Prefix
-            backend:
-              service:
-                name: authentik-server
-                port:
-                  number: 80
-          - path: /application/o/end-session/
             pathType: Prefix
             backend:
               service:
