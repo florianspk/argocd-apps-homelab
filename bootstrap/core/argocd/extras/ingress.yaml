@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-badge
+spec:
+  ingressClassName: ingress-public
+  rules:
+    - host: argocd-badge.wheezy.fr
+      http:
+        paths:
+          - path: /api/badge
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 80
