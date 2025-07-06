@@ -1,0 +1,12 @@
+{
+  "appName": "personal-portfolio",
+  "env": "prd",
+  "destNamespace": "personal-portfolio",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "ghcr.io/florianspk/personal-portfolio",
+  "chart": "personal-portfolio",
+  "chartVersion": "*",
+  "valuesPath": "dev/personal-portfolio/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
