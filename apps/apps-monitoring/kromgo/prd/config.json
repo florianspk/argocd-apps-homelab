@@ -1,0 +1,12 @@
+{
+  "appName": "kromgo",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "monitoring",
+  "chartRepoURL": "https://rubxkube.github.io/common-charts/",
+  "chart": "common",
+  "chartVersion": "v0.4.5",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "dev/kromgo/values.yaml",
+  "valuesGitRef": "HEAD"
+}
