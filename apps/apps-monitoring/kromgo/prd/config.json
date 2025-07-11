@@ -2,7 +2,7 @@
   "appName": "kromgo",
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
-  "destNamespace": "monitoring",
+  "destNamespace": "observability",
   "chartRepoURL": "https://rubxkube.github.io/common-charts/",
   "chart": "common",
   "chartVersion": "v0.4.5",
