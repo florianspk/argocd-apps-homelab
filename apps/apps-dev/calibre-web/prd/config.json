@@ -1,0 +1,12 @@
+{
+  "appName": "calibre",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "servarr",
+  "chartRepoURL": "https://rubxkube.github.io/common-charts/",
+  "chart": "common",
+  "chartVersion": "v0.4.5",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "dev/calibre/values.yaml",
+  "valuesGitRef": "HEAD"
+}
