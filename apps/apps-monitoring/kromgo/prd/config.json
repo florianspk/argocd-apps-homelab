@@ -7,6 +7,6 @@
   "chart": "common",
   "chartVersion": "v0.4.5",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
-  "valuesPath": "dev/kromgo/values.yaml",
+  "valuesPath": "monitoring/kromgo/values.yaml",
   "valuesGitRef": "HEAD"
 }
