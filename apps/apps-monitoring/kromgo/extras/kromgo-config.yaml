@@ -6,10 +6,6 @@ metadata:
     app: kromgo
 data:
   config.yaml: |
-    server:
-      port: 8080
-    prometheus:
-      url: "http://kube-prometheus-stack-prometheus.default.svc.cluster.local:9090"
     metrics:
       - name: cluster_cpu_usage
         query: 'round((1 - avg(rate(node_cpu_seconds_total{mode="idle"}[5m]))) * 100, 0.1)'
