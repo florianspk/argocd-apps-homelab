@@ -1,0 +1,12 @@
+{
+  "appName": "calibre-web",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "servarr",
+  "chartRepoURL": "https://k8s-at-home.com/charts/",
+  "chart": "calibre-web",
+  "chartVersion": "8.4.2",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "dev/calibre/values.yaml",
+  "valuesGitRef": "HEAD"
+}
