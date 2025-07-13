@@ -1,0 +1,12 @@
+{
+  "appName": "litlyx",
+  "env": "prd",
+  "destNamespace": "litlyx",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "ghcr.io/florianspk/helm-charts",
+  "chart": "litlyx",
+  "chartVersion": "*",
+  "valuesPath": "dev/litlyx/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
