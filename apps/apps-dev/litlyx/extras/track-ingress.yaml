@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: track-litlyx
+  labels:
+    helm.sh/chart: litlyx-0.1.2
+    app.kubernetes.io/name: litlyx
+    app.kubernetes.io/instance: litlyx
+    app.kubernetes.io/version: "latest"
+    app.kubernetes.io/managed-by: Helm
+spec:
+  ingressClassName: ingress-public
+  rules:
+    - host: "track.florianspk.fr"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: litlyx-producer
+                port:
+                  number: 3099
