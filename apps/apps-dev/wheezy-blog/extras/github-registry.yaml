@@ -1,0 +1,15 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: github-registry
+  namespace: wheezy-blog
+spec:
+  encryptedData:
+    .dockerconfigjson: AgBzPk3Q2+sMXhcvPZIqE2YXMQpAtfN3pMs8PhwZ8n2g9PIfx0k67Ai9wlExzfCp/XX7xr9irYohoRgDW3gfMR22oZVqrKg1ZSYUMAO2g7UmggP83xhs7kWoHUVn5HnEZ8F2cmJx+gCHk00utnys8nocFe+RL7nQ6rru2nR4t619nVvsh0Cf0d0UVWFojicGh2cD/gRj/kTJfocasec0IcJOHFLTqyCjJZJIq4a5QdI1FOPg1g2VVY2yiiw2jzj13UxmVzdaSrdVH3QY5mnmMShVA1384BlpNEl/6KU5ebvyILvBMT4hQYsxYMnT4y+wTa5X+pf2PejGc8LODPu8P8O2iVZAibc4lN3iYHDI2tb6AL/rejZZ9xBWhKNLIQQabELlY2w290S6PoBP3kZ+bOLb/3Q8tdouo21ii9j3iHlrr/YVHzbs3K+z21qdc0f/lTAop1kpiDdDKry0lhqaoR45eke9dZLpXF+3vz9kNHkaK73XbSda0KZqOcb5RZMAJbtSgZh4hA1Qipn8RJHJu78I19ujfsoGEftkXq09jUiHkovJqOuIwFpaikZCOmBL5OzuGDFMn9guJlRw5oizO9bJotzIZhCcwtjcBZbLWF80nFE5+Z84K7fEFPra2es75rw7FGL0XW5I28QL8pGjEtl9HvqJHWf6gxrdKIpyWXvDrFf4BHpTiJ2NTcoFKrNlK5pIeXFvl3z0uWNxrBbrCI+JwlT67kP+RopiTjZmv9OX62s9C0KV9y/q0PM6O+kDGxYjSin/eBi89LN6dFO4tbY3JYlAwokLd9/tJ54cCfHKh6sBdd78od69ZK2M+7H5769RS1sMOtQ0s6qtyAAS0gD9ur4S9egiZw==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: github-registry
+      namespace: wheezy-blog
+    type: kubernetes.io/dockerconfigjson

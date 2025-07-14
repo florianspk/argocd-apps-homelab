@@ -1,0 +1,12 @@
+{
+  "appName": "wheezy-blog",
+  "env": "prd",
+  "destNamespace": "wheezy-blog",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "ghcr.io/florianspk/helm-charts",
+  "chart": "wheezy-blog",
+  "chartVersion": "*",
+  "valuesPath": "dev/wheezy-blog/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
