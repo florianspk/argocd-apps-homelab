@@ -2,12 +2,22 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: track-litlyx
-  labels:
-    helm.sh/chart: litlyx-0.1.2
-    app.kubernetes.io/name: litlyx
-    app.kubernetes.io/instance: litlyx
-    app.kubernetes.io/version: "latest"
-    app.kubernetes.io/managed-by: Helm
+  annotations:
+    nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+    nginx.ingress.kubernetes.io/forwarded-for-header: "X-Forwarded-For"
+    nginx.ingress.kubernetes.io/real-ip-header: "X-Real-IP"
+    nginx.ingress.kubernetes.io/proxy-real-ip-cidr: "0.0.0.0/0"
+    nginx.ingress.kubernetes.io/enable-real-ip: "true"
+    nginx.ingress.kubernetes.io/compute-full-forwarded-for: "true"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "X-Real-IP: $remote_addr";
+      more_set_headers "X-Forwarded-For: $proxy_add_x_forwarded_for";
+      more_set_headers "X-Forwarded-Proto: $scheme";
+
+      if ($http_cf_connecting_ip) {
+        more_set_headers "X-Real-IP: $http_cf_connecting_ip";
+        more_set_headers "X-Forwarded-For: $http_cf_connecting_ip";
+      }
 spec:
   ingressClassName: ingress-public
   rules:
