@@ -3,7 +3,7 @@
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "n8n",
-  "chartRepoURL": "8gears.container-registry.com/library/n8n",
+  "chartRepoURL": "8gears.container-registry.com/library",
   "chart": "n8n",
   "chartVersion": "1.0.10",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
