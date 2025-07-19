@@ -1,11 +1,11 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: authentik-tls-secret
+  name: n8n-tls-secret
 spec:
-  commonName: Glance server
+  commonName: n8n server
   dnsNames:
-    - "*.wheezy.lab"
+    - "n8n.wheezy.lab"
   duration: 4320h
   issuerRef:
     kind: ClusterIssuer
@@ -13,7 +13,7 @@ spec:
   privateKey:
     algorithm: ECDSA
     size: 256
-  secretName: authentik-server-tls
+  secretName: n8n-server-tls
   subject:
     organizationalUnits:
       - Kubernetes
