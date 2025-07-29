@@ -5,7 +5,7 @@
   "destNamespace": "kube-system",
   "chartRepoURL": "https://helm.cilium.io",
   "chart": "cilium",
-  "chartVersion": "1.17.6",
+  "chartVersion": "1.18.0",
   "valuesPath": "helm/cilium-values.yaml",
   "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
   "valuesGitRef": "HEAD"
