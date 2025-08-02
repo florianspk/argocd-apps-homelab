@@ -26,3 +26,6 @@ data:
       - name: kernel_version
         query: 'kube_node_info{job="kube-state-metrics"}'
         label: 'kernel_version'
+      - name: argocd_version
+        query: 'label_replace(kube_pod_container_info{pod="argocd-application-controller-0", container="application-controller"}, "version", "$1", "image", ".*:(v?.*)")'
+        label: 'version'
