@@ -17,3 +17,12 @@ data:
         query: 'sum(kube_pod_status_phase{phase="Running"})'
       - name: cluster_nodes_ready
         query: 'sum(kube_node_status_condition{condition="Ready",status="true"})'
+      - name: kubelet_version
+        query: 'kube_node_info{job="kube-state-metrics"}'
+        label: 'kubelet_version'
+      - name: talos_version
+        query: 'kube_node_info{job="kube-state-metrics"}'
+        label: 'os_image'
+      - name: kernel_version
+        query: 'kube_node_info{job="kube-state-metrics"}'
+        label: 'kernel_version'
