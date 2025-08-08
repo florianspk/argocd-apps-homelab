@@ -1,0 +1,15 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: github-registry
+  namespace: tetris-webapp
+spec:
+  encryptedData:
+    .dockerconfigjson: AgAaxIWNGWuC+hjHqm/zpqB2aPlml/5kgHwufu11Jtz7Hnue62P7BSvXLUv48VH83Na/K/mJbA+MIlC34x69act4N7a3jBxGNt60GvtjaOGCTsXg5mHtNJvem4GhppMMD/fsej86u2lo+cJe5ePW0vf9R8O8mc5gBNx0igq7Q6kRab+7Mz6woBzdfK/wsgVz9Ripkrj0pttyUO8VUf87Ko+Isdx4/gKTM5kNBR/YX1JUKzFKyqTA2vMFoxTo5ser5AZOEa2dlQY3VDV6ZZCwsU0uczPW3Q+zQIJVLxWcI4R8dvxM8qxbx9Q6hd/A3fJ84uMlZlsNPhBoen014M9YVGVfCqnlxgDTNSEKZTn1xgIa+N7ji/ocQb/iPIqIEcMvKa11zN3NhZc7nEIl9Vz9Wv7kzXsesf69F2i/RZoxjUvbST2gg2pYcq8b1BAyWmJXeEbMGzIF5ViIBFEp0h4afvgRRwCQHMf/S3Mx1imA/MeptW/aHojdlblr16l70f2inAe38BK0LvSICYCiblH9FMwgsSogs7sEu8IViPewMfHLgPVVRLjVxELVD+tDYDgKTk1HwPWvI+9IRvmJCXk8kmsBoM3/F/4pkfZKGGh1IW0720RmDcDV66hD12dcRbfnM+0/9Ww7if6izNjHIfEQnM4eUFHDPU+KGuvAueo8AoW/T/66TjBO/trWGY05iANopHCh84bAoI3uM/nBWcS8PBxCWT+gGme5THijQlITd2EALO0MNp0ajAnxw4JM48tzgDduCkrhyPll4akmRHG95Upfca2rXkfojSsmTVEGKqbWMI4bSQKak23t0ZhH9isrT5kNGjU+/rqSG6ZhD2GNeBeHMixcblmSpw==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: github-registry
+      namespace: tetris-webapp
+    type: kubernetes.io/dockerconfigjson

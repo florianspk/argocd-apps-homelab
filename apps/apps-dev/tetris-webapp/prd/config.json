@@ -1,0 +1,12 @@
+{
+  "appName": "tetris-webapp",
+  "env": "prd",
+  "destNamespace": "tetris-webapp",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "ghcr.io/florianspk/helm-charts",
+  "chart": "tetris-webapp",
+  "chartVersion": "*",
+  "valuesPath": "dev/tetris-webapp/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
