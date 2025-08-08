@@ -5,7 +5,7 @@
   "destServer": "https://kubernetes.default.svc",
   "chartRepoURL": "https://prometheus-community.github.io/helm-charts",
   "chart": "kube-prometheus-stack",
-  "chartVersion": "75.*",
+  "chartVersion": "76.*",
   "valuesPath": "monitoring/kube-prometheus-stack/values.yaml",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesGitRef": "HEAD"
