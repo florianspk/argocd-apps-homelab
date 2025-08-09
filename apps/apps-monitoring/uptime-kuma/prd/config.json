@@ -5,7 +5,7 @@
   "destNamespace": "observability",
   "chartRepoURL": "https://dirsigler.github.io/uptime-kuma-helm",
   "chart": "uptime-kuma",
-  "chartVersion": "2.21.3",
+  "chartVersion": "2.22.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "monitoring/uptime-kuma/values.yaml",
   "valuesGitRef": "HEAD"
