@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: linstor
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: "https://github.com/florianspk/argocd-apps-homelab"
+    targetRevision: HEAD
+    path: bootstrap/linstor
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: piraeus-datastore
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
