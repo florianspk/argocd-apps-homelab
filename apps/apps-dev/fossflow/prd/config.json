@@ -4,7 +4,7 @@
   "destNamespace": "tools",
   "destServer": "https://kubernetes.default.svc",
   "chartRepoURL": "https://bjw-s-labs.github.io/helm-charts",
-  "chart": "bjw-s-labs/app-template",
+  "chart": "app-template",
   "chartVersion": "*",
   "valuesPath": "dev/fossflow/values.yaml",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
