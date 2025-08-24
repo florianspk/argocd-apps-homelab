@@ -1,0 +1,12 @@
+{
+  "appName": "authentik",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "authentik",
+  "chartRepoURL": "goauthentik/authentik",
+  "chart": "authentik",
+  "chartVersion": "2025.6.4",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/authentik/values.yaml",
+  "valuesGitRef": "HEAD"
+}
