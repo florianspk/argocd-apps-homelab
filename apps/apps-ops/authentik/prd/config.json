@@ -3,7 +3,7 @@
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "authentik",
-  "chartRepoURL": "goauthentik/authentik",
+  "chartRepoURL": "https://charts.goauthentik.io/",
   "chart": "authentik",
   "chartVersion": "2025.6.4",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
