@@ -1,0 +1,12 @@
+{
+  "appName": "k8tz",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "k8tz",
+  "chartRepoURL": "https://k8tz.github.io/k8tz/",
+  "chart": "k8tz",
+  "chartVersion": "4.13.1",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/k8tz/values.yaml",
+  "valuesGitRef": "HEAD"
+}
