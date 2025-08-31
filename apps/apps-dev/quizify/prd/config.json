@@ -1,5 +1,5 @@
 {
-  "appName": "QuiZify",
+  "appName": "quizify",
   "env": "prd",
   "destNamespace": "quizify",
   "destServer": "https://kubernetes.default.svc",
