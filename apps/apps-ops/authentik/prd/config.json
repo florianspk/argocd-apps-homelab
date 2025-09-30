@@ -5,7 +5,7 @@
   "destNamespace": "authentik",
   "chartRepoURL": "https://charts.goauthentik.io/",
   "chart": "authentik",
-  "chartVersion": "2025.8.3",
+  "chartVersion": "2025.8.4",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/authentik/values.yaml",
   "valuesGitRef": "HEAD"
