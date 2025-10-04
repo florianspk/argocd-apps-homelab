@@ -1,6 +1,6 @@
 <div align="center">
 
-## <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="16" height="16"> Mes Applications de mon Homelab <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="16" height="16">
+## <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f680/512.gif" alt="🚀" width="16" height="16"> Mon Homelab Kubernetes <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="16" height="16">
 
 <img src="assets/wheezy_logo.png" align="center"  height="250px"/>
 
@@ -11,9 +11,9 @@ _... géré avec Terraform, ArgoCD, et Talos Linux_ <img src="https://fonts.gsta
 
 <div align="center">
 
-[![Talos](https://img.shields.io/badge/Talos-Linux-blue?style=for-the-badge&logo=talos&logoColor=white)](https://talos.dev)&nbsp;&nbsp;
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-1.33.2-blue?style=for-the-badge&logo=kubernetes&logoColor=white)](https://kubernetes.io)&nbsp;&nbsp;
-[![ArgoCD](https://img.shields.io/badge/ArgoCD-GitOps-blue?style=for-the-badge&logo=argo&logoColor=white)](https://argo-cd.readthedocs.io)&nbsp;&nbsp;
+[![Talos](https://img.shields.io/endpoint?url=https://api.allorigins.win/raw?url=https%3A%2F%2Fkromgo.wheezy.fr%2Ftalos_version&style=for-the-badge&logo=talos&logoColor=white&label=Talos&color=blue)](https://talos.dev)&nbsp;&nbsp;
+[![Kubernetes](https://img.shields.io/endpoint?url=https://api.allorigins.win/raw?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fkubelet_version&style=for-the-badge&logo=kubernetes&logoColor=white&label=Kubernetes&color=blue)](https://kubernetes.io)&nbsp;&nbsp;
+[![ArgoCD](https://img.shields.io/endpoint?url=https://api.allorigins.win/raw?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fargocd_version&style=for-the-badge&logo=argo&logoColor=white&label=ArgoCD&color=blue)](https://argo-cd.readthedocs.io)&nbsp;&nbsp;
 [![Terraform](https://img.shields.io/badge/Terraform-IaC-blue?style=for-the-badge&logo=terraform&logoColor=white)](https://terraform.io)
 
 </div>
@@ -28,10 +28,10 @@ _... géré avec Terraform, ArgoCD, et Talos Linux_ <img src="https://fonts.gsta
 
 <div align="center">
 
-[![CPU-Usage](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_cpu_usage&style=flat-square&label=CPU)](https://kromgo.wheezy.fr)&nbsp;&nbsp;
-[![Memory-Usage](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_memory_usage&style=flat-square&label=Memory)](https://kromgo.wheezy.fr)&nbsp;&nbsp;
-[![Node-Count](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_nodes_ready)](https://kromgo.wheezy.fr)&nbsp;&nbsp;
-[![Pod-Count](https://img.shields.io/endpoint?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_pods_running)](https://kromgo.wheezy.fr)&nbsp;&nbsp;
+[![CPU-Usage](https://img.shields.io/endpoint?url=https://api.allorigins.win/raw?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_cpu_usage&style=flat-square&label=CPU)]("")&nbsp;&nbsp;
+[![Memory-Usage](https://img.shields.io/endpoint?url=https://api.allorigins.win/raw?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_memory_usage&style=flat-square&label=Memory)]("")&nbsp;&nbsp;
+[![Node-Count](https://img.shields.io/endpoint?url=https://api.allorigins.win/raw?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_nodes_ready)]("")&nbsp;&nbsp;
+[![Pod-Count](https://img.shields.io/endpoint?url=https://api.allorigins.win/raw?url=https%3A%2F%2Fkromgo.wheezy.fr%2Fcluster_pods_running)]("")&nbsp;&nbsp;
 </div>
 
 ---
