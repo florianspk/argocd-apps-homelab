@@ -1,0 +1,12 @@
+{
+  "appName": "bytestash",
+  "env": "prd",
+  "destNamespace": "tools",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "https://bjw-s-labs.github.io/helm-charts",
+  "chart": "app-template",
+  "chartVersion": "*",
+  "valuesPath": "dev/bytestash/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
