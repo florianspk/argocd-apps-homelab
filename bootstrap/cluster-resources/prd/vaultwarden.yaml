@@ -14,6 +14,7 @@ subsets:
         protocol: TCP
 
 ---
+# Service - Pointe vers les Endpoints externes
 apiVersion: v1
 kind: Service
 metadata:
@@ -21,10 +22,11 @@ metadata:
   namespace: tools
 spec:
   ports:
-    - port: 443
+    - port: 32301
       targetPort: 32301
       protocol: TCP
       name: https
+  # Pas de selector car on utilise des Endpoints manuels
 
 ---
 # Ingress - Utilise la classe Cilium
@@ -34,11 +36,9 @@ metadata:
   name: vaultwarden-service-ingress
   namespace: tools
   annotations:
-    # Annotations pour le backend HTTPS
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-    nginx.ingress.kubernetes.io/proxy-ssl-verify: "false"
-    ingress.cilium.io/secure-backends: "true"
+    # Annotations Cilium pour backend HTTPS avec certificat non vérifié
     ingress.cilium.io/backend-protocol: "HTTPS"
+    ingress.cilium.io/insecure-skip-verify: "true"
 spec:
   ingressClassName: cilium
   rules:
@@ -51,21 +51,23 @@ spec:
               service:
                 name: vaultwarden-service
                 port:
-                  number: 443
+                  number: 32301
   tls:
     - hosts:
         - passwords.wheezy.lab
       secretName: vaultwarden-server-tls
+
 ---
+# Certificate - Génère le certificat TLS pour l'Ingress
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: vaultwarden-tls-secret
   namespace: tools
 spec:
-  commonName: Glance server
+  commonName: passwords.wheezy.lab
   dnsNames:
-    - "*.wheezy.lab"
+    - passwords.wheezy.lab
   duration: 4320h
   issuerRef:
     kind: ClusterIssuer
