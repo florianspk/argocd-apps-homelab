@@ -61,6 +61,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: vaultwarden-tls-secret
+  namespace: tools
 spec:
   commonName: Glance server
   dnsNames:
