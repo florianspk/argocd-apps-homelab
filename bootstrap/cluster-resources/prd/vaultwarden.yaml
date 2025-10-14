@@ -1,0 +1,80 @@
+---
+# Endpoints - Définit l'adresse IP externe
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: vaultwarden-service
+  namespace: tools
+subsets:
+  - addresses:
+      - ip: 192.168.1.88
+    ports:
+      - port: 32301
+        name: https
+        protocol: TCP
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vaultwarden-service
+  namespace: tools
+spec:
+  ports:
+    - port: 443
+      targetPort: 32301
+      protocol: TCP
+      name: https
+
+---
+# Ingress - Utilise la classe Cilium
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vaultwarden-service-ingress
+  namespace: tools
+  annotations:
+    # Annotations pour le backend HTTPS
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    nginx.ingress.kubernetes.io/proxy-ssl-verify: "false"
+    ingress.cilium.io/secure-backends: "true"
+    ingress.cilium.io/backend-protocol: "HTTPS"
+spec:
+  ingressClassName: cilium
+  rules:
+    - host: passwords.wheezy.lab
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: vaultwarden-service
+                port:
+                  number: 443
+  tls:
+    - hosts:
+        - passwords.wheezy.lab
+      secretName: vaultwarden-server-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: vaultwarden-tls-secret
+spec:
+  commonName: Glance server
+  dnsNames:
+    - "*.wheezy.lab"
+  duration: 4320h
+  issuerRef:
+    kind: ClusterIssuer
+    name: ingress
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  secretName: vaultwarden-server-tls
+  subject:
+    organizationalUnits:
+      - Kubernetes
+    organizations:
+      - wheezy.lab
