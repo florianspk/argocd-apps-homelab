@@ -5,7 +5,7 @@
   "destNamespace": "argocd",
   "chartRepoURL": "https://argoproj.github.io/argo-helm",
   "chart": "argo-cd",
-  "chartVersion": "8.6.3",
+  "chartVersion": "9.0.1",
   "valuesPath": "helm/argocd-values.yaml",
   "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
   "valuesGitRef": "HEAD"
