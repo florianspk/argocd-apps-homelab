@@ -5,7 +5,7 @@
   "destNamespace": "kube-system",
   "chartRepoURL": "https://stakater.github.io/stakater-charts",
   "chart": "reloader",
-  "chartVersion": "2.2.6",
+  "chartVersion": "2.2.7",
   "valuesPath": "helm/reloader-values.yaml",
   "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
   "valuesGitRef": "HEAD"
