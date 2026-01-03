@@ -5,7 +5,7 @@
   "destNamespace": "cloudflare-tunnel",
   "chartRepoURL": "https://kubernetes.github.io/ingress-nginx",
   "chart": "ingress-nginx",
-  "chartVersion": "4.13.3",
+  "chartVersion": "4.14.1",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/ingress-nginx/values.yaml",
   "valuesGitRef": "HEAD"
