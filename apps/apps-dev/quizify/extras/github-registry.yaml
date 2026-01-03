@@ -1,15 +1,17 @@
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
   name: github-registry
-  namespace: quizify
 spec:
   encryptedData:
-    .dockerconfigjson: AgCxgRXBMnvv8DmKK8PA+mSskcaWxMM1An1vGTPvPWOnvLlPUNIZz6B4J5QLuzU6dURs+NJ3WGm6PnScL5ZlHYI2BKvfDpoh7dL3OVSmhTAEFO1G5tRT1TGlGqZYMACupT7NK0v7U+DaFleZeXG/SuuEEmHV+UGHd2bIMqVe9NXvukmrb5MZv3Zvvyfv3iL/vPxUcVm5oU3/OeONbtZ/tt4VB5kLaqpggcwx/vitacxg4PmAS6mPeh3JEZ7cvUt/Zv1C+uComW6W0VN3XDVWk6LsANTWSmaNjKAHpQ/DZ+xHzh6UCMm+DOy7UKnMey9uQaXRwSoPcvBj6mL4t/fF6LfN7TMko9lSH8g3MagB5brDeNUduU7oGtwXCvjfB86nCOb585wbhvBXbbABgJdqZGh1QvVXS747c7IlufluT+yPx+MGPRsubwgx7AkSpOrkxuOCVr1uHIhH0PHV+JU+WEGBIywBmZaN3MejBDtCtUXujmYqy+bZagd2YEl/gUI+Znwl/yCEA+pYjEeC33Kx1r5brIcCPq0SRDDgihh+v8U17/3mEBZOckPMaplSAcnS3Y1NwFlPcT73fsXojr5xnvgIG/O9GOFx12RnnmfPwqgH8U4QOmwv48H8K3CSMBljsI1Kx/Nfzl8tYRISxx0aFpKlG6wOJQnlJ+e4WqTKvIsqpVzynFlhzyqE+I6OZ4QYDOzKbjPJ/5QEXGjduhsUN45b5lZrUdmGJmrZ/Fd0tWFRd/m6uyb/YqTA0URmqBVgAZLn1zk9Kz4wP/cEIAhFiEJRRu9VQPHwMg/cupvx9DjhIoNr5xd12+reexE7GlznizNyyUb3M3SzFs0XuiZIGZWVvmVDf9epNQ==
+    .dockerconfigjson: AgA9luFws9rxvvo4A67qDiTIG7I+eyRmPkEfuQMibR7/j3CvXTGKUhITK+2KDsLuXG1JiqfQBeHsPgBbJ6MEP5IZyPQe5ilf+eQjjb90o/l5bWBojifAMoCAnVXH7y3AqeLBFBAojDmZcNXo3lMDI77EZVlmrl9+DNJ+cSW2yQgcQOVNhETSczwQ04diLKQeqTeG9dDl2aI85DEhTi5nKkM43msE4k7OSiWmuWty1UtOblmNV3bijrlcvu70MVxL2iCMLa9tDBTArl5Z4cr3ZU7f8oqG8gSJe4aO69ndr5IEaZPxOv2MuVHxwYqkBiPUX3wiT4bI7WOYkKWqa3rvCxm7VJDJch80ZdxFAAElYtPNTRi12krNT1ZhQmoWeHRe+Tsmu2s+p999C1QtQwgBhAUWlCcVKleYLiRS0XD08mdCXnAtF3ryP/B5WWv8PJQDfF6PUxLgaK/X9Plx2HabhUICzzMKJJUsFaYBCzw3IWH1/Jvb6beNK2jXV4kXmAWbBhW5ib6MAaoHXoQvw2aahl88/paBTyhUKoRhV8TEAYVD4NdOPfbkIILIhrOxdVQ5ukEG+lJWMhQcKRru32sbn8h+2n+48s0keBwMbk0WZE6ElMwz4/SYbRnQtoL1WfPoCbiS0oAUY6gPRAwLochG8SMLk9dO51RYRxULTU1rxNYsL4z4KKLSPFiH5oTCLH4clEPLiIhVJh+oAiUXz+8fkQEIa4yM/tqStYBxG91ZXmDTssYE/ZcyQUvS1+qsNO0uYVq22QkwyPXCx/7L2k1a8GLPi2/mtzgT0Xg/JJuAkWVS2+bP9+nsPE4ZIyoci0ptjbW9Uk/lGM8X75t4Y02uJF3VhvS0RqmlZA==
   template:
     metadata:
+      annotations:
+        sealedsecrets.bitnami.com/cluster-wide: "true"
       creationTimestamp: null
       name: github-registry
-      namespace: quizify
     type: kubernetes.io/dockerconfigjson
