@@ -1,0 +1,12 @@
+{
+  "appName": "cloudnative-pg",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "cloudnative-pg",
+  "chartRepoURL": "https://cloudnative-pg.io/charts/",
+  "chart": "cloudnative-pg",
+  "chartVersion": "0.27.*",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/cloudnative-pg/values.yaml",
+  "valuesGitRef": "HEAD"
+}
