@@ -1,0 +1,10 @@
+apiVersion: velero.io/v1
+kind: VolumeSnapshotLocation
+metadata:
+  name: n8n-pvc
+  namespace: velero
+spec:
+  provider: aws
+  config:
+    region: garage
+    prefix: n8n-pvc
