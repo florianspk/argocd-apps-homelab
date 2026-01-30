@@ -1,0 +1,12 @@
+{
+  "appName": "velero",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "velero",
+  "chartRepoURL": "https://vmware-tanzu.github.io/helm-charts",
+  "chart": "velero",
+  "chartVersion": "1.17.1",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/velero/values.yaml",
+  "valuesGitRef": "HEAD"
+}
