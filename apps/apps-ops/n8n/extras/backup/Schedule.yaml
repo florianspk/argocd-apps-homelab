@@ -1,7 +1,7 @@
 apiVersion: velero.io/v1
 kind: Schedule
 metadata:
-  name: n8n-pvc-backup
+  name: n8n-pvc-daily
   namespace: velero
 spec:
   schedule: "0 2 * * *"
@@ -10,11 +10,7 @@ spec:
       - n8n
     includedResources:
       - persistentvolumeclaims
-      - volumesnapshots
     labelSelector:
       matchLabels:
         app.kubernetes.io/name: n8n
-    snapshotVolumes: true
-    volumeSnapshotLocations:
-      - n8n-pvc
-    ttl: 720h0m0s
+    ttl: 168h0m0s
