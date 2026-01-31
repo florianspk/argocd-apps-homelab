@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: argocd-badge
 spec:
-  ingressClassName: ingress-public
+  ingressClassName: traefik-pub
   rules:
     - host: argocd-badge.wheezy.fr
       http:
