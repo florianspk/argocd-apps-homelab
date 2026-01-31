@@ -1,0 +1,12 @@
+{
+  "appName": "ingress-traefik",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "cloudflare-tunnel",
+  "chartRepoURL": "https://traefik.github.io/charts",
+  "chart": "traefik",
+  "chartVersion": "39.0.0",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/traefik/values.yaml",
+  "valuesGitRef": "HEAD"
+}
