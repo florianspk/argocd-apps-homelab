@@ -1,5 +1,5 @@
 {
-  "appName": "ingress-traefik",
+  "appName": "traefik",
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "cloudflare-tunnel",
