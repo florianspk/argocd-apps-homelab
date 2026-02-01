@@ -3,7 +3,7 @@
   "env": "prd",
   "destNamespace": "immich",
   "destServer": "https://kubernetes.default.svc",
-  "chartRepoURL": "ghcr.io/immich-app/immich-charts ",
+  "chartRepoURL": "ghcr.io/immich-app/immich-charts",
   "chart": "immich",
   "chartVersion": "0.10.3",
   "valuesPath": "dev/immich/values.yaml",
