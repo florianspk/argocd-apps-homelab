@@ -54,7 +54,7 @@ spec:
           - CreateNamespace=true
           - ApplyOutOfSyncOnly=true
         automated:
-          prune: true
+          prune: false
           selfHeal: true
           allowEmpty: true
 status: {}

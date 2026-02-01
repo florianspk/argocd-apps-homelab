@@ -55,7 +55,7 @@ spec:
           - ApplyOutOfSyncOnly=true
           - ServerSideApply=true
         automated:
-          prune: true
+          prune: false
           selfHeal: true
           allowEmpty: true
 status: {}

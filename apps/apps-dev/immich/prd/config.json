@@ -1,0 +1,12 @@
+{
+  "appName": "immich",
+  "env": "prd",
+  "destNamespace": "immich",
+  "destServer": "https://kubernetes.default.svc",
+  "chartRepoURL": "ghcr.io/immich-app/immich-charts",
+  "chart": "immich",
+  "chartVersion": "0.10.3",
+  "valuesPath": "dev/immich/values.yaml",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesGitRef": "HEAD"
+}
