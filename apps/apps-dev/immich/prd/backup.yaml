@@ -1,13 +1,13 @@
 apiVersion: velero.io/v1
 kind: Schedule
 metadata:
-  name: immich-pvc-daily
+  name: nextcloud-pvc-daily
   namespace: velero
 spec:
-  schedule: "0 2 * * *"
+  schedule: "0 1 * * *"
   template:
     includedNamespaces:
-      - immich
+      - nextcloud
     includedResources:
       - persistentvolumeclaims
     ttl: 168h0m0s
