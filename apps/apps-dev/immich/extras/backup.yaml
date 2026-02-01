@@ -1,0 +1,16 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: immich-pvc-daily
+  namespace: velero
+spec:
+  schedule: "0 2 * * *"
+  template:
+    includedNamespaces:
+      - immich
+    includedResources:
+      - persistentvolumeclaims
+    labelSelector:
+      matchLabels:
+        app.kubernetes.io/name: n8n
+    ttl: 168h0m0s
