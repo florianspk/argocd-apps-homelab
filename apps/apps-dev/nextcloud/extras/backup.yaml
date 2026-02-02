@@ -6,6 +6,7 @@ metadata:
 spec:
   schedule: "0 1 * * *"
   template:
+    defaultVolumesToFsBackup: true
     includedNamespaces:
       - nextcloud
     includedResources:

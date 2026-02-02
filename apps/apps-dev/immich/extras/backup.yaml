@@ -6,6 +6,7 @@ metadata:
 spec:
   schedule: "0 2 * * *"
   template:
+    defaultVolumesToFsBackup: true
     includedNamespaces:
       - immich
     includedResources:
