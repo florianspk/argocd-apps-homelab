@@ -9,6 +9,4 @@ spec:
     defaultVolumesToFsBackup: true
     includedNamespaces:
       - nextcloud
-    includedResources:
-      - persistentvolumeclaims
     ttl: 168h0m0s
