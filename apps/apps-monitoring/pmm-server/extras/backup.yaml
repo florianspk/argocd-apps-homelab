@@ -1,7 +1,7 @@
 apiVersion: velero.io/v1
 kind: Schedule
 metadata:
-  name: nextcloud-pvc-daily
+  name: observability-pvc-daily
   namespace: velero
 spec:
   schedule: "0 1 * * *"
