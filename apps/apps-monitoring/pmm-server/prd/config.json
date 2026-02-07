@@ -4,7 +4,7 @@
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "observability",
   "chartRepoURL": "https://percona.github.io/percona-helm-charts",
-  "chart": "pmm-server",
+  "chart": "pmm",
   "chartVersion": "1.4.14",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "monitoring/pmm-server/values.yaml",
