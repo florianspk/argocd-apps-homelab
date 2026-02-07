@@ -1,0 +1,12 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: nextcloud-pvc-daily
+  namespace: velero
+spec:
+  schedule: "0 1 * * *"
+  template:
+    defaultVolumesToFsBackup: true
+    includedNamespaces:
+      - observability
+    ttl: 168h0m0s
