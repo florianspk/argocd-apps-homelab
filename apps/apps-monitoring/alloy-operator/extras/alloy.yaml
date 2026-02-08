@@ -1,0 +1,106 @@
+apiVersion: collectors.grafana.com/v1alpha1
+kind: Alloy
+metadata:
+  name: alloy-all-logs-advanced
+  namespace: observability
+spec:
+  alloy:
+    configMap:
+      content: |-
+        // ============================================
+        // Collecte des logs des pods
+        // ============================================
+
+        discovery.kubernetes "pods" {
+          role = "pod"
+        }
+
+        loki.source.kubernetes "pods" {
+          targets    = discovery.kubernetes.pods.targets
+          forward_to = [loki.process.pods.receiver]
+        }
+
+        loki.process "pods" {
+          // Labels de base
+          stage.static_labels {
+            values = {
+              cluster = "wheezylab",
+            }
+          }
+
+          // Extraction des labels K8s
+          stage.labels {
+            values = {
+              namespace = "",
+              pod       = "",
+              container = "",
+              node      = "",
+              app       = "",
+            }
+          }
+
+          // Détection du niveau de log (ERROR, WARN, INFO, etc.)
+          stage.regex {
+            expression = "(?P<level>ERROR|WARN|WARNING|INFO|DEBUG|FATAL|TRACE)"
+          }
+
+          stage.labels {
+            values = {
+              level = "",
+            }
+          }
+
+          forward_to = [loki.write.loki.receiver]
+        }
+
+        // ============================================
+        // Collecte des events K8s
+        // ============================================
+
+        loki.source.kubernetes_events "events" {
+          job_name   = "kubernetes-events"
+          log_format = "logfmt"
+
+          namespaces = []  // Vide = tous les namespaces
+
+          forward_to = [loki.process.events.receiver]
+        }
+
+        loki.process "events" {
+          stage.static_labels {
+            values = {
+              cluster = "wheezylab",
+              job     = "kubernetes-events",
+            }
+          }
+
+          // Extraction du type d'event
+          stage.logfmt {
+            mapping = {
+              "type"      = "",
+              "reason"    = "",
+              "object"    = "",
+              "namespace" = "",
+            }
+          }
+
+          stage.labels {
+            values = {
+              type      = "",
+              reason    = "",
+              namespace = "",
+            }
+          }
+
+          forward_to = [loki.write.loki.receiver]
+        }
+
+        // ============================================
+        // Envoi vers Loki
+        // ============================================
+
+        loki.write "loki" {
+          endpoint {
+            url = "http://loki-gateway.observability.svc.cluster.local/loki/api/v1/push"
+          }
+        }
