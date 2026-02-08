@@ -1,0 +1,12 @@
+{
+  "appName": "loki",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "observability",
+  "chartRepoURL": "https://grafana.github.io/helm-charts",
+  "chart": "loki",
+  "chartVersion": "6.52.0",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "monitoring/loki/values.yaml",
+  "valuesGitRef": "HEAD"
+}

@@ -1,0 +1,12 @@
+{
+  "appName": "alloy-operator",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "observability",
+  "chartRepoURL": "https://grafana.github.io/helm-charts",
+  "chart": "alloy-operator",
+  "chartVersion": "0.4.1",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "monitoring/alloy-operator/values.yaml",
+  "valuesGitRef": "HEAD"
+}
