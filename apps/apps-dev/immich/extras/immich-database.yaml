@@ -8,8 +8,12 @@ spec:
     size: 20Gi
   imageName: ghcr.io/tensorchord/cloudnative-vectorchord:16.9-0.4.3
   postgresql:
+    parameters:
+      pg_stat_statements.max: "10000"
+      pg_stat_statements.track: all
     shared_preload_libraries:
       - "vchord.so"
+      - "pg_stat_statements"
   bootstrap:
     initdb:
       postInitApplicationSQL:
