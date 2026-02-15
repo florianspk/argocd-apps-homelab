@@ -5,7 +5,7 @@
   "destNamespace": "observability",
   "chartRepoURL": "https://percona.github.io/percona-helm-charts",
   "chart": "pmm",
-  "chartVersion": "1.4.14",
+  "chartVersion": "1.5.1",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "monitoring/pmm-server/values.yaml",
   "valuesGitRef": "HEAD"
