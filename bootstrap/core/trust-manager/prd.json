@@ -5,7 +5,7 @@
   "destNamespace": "cert-manager",
   "chartRepoURL": "https://charts.jetstack.io",
   "chart": "trust-manager",
-  "chartVersion": "v0.20.3",
+  "chartVersion": "v0.21.0",
   "valuesPath": "helm/trust-manager-values.yaml",
   "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
   "valuesGitRef": "HEAD"
