@@ -1,0 +1,15 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata:
+  name: servarr-pvc-daily
+  namespace: velero
+spec:
+  schedule: "0 3 * * *"
+  template:
+    defaultVolumesToFsBackup: true
+    includedNamespaces:
+      - servarr
+    excludedPVCs:
+      - namespace: servarr
+        name: servarr-jellyfin-media
+    ttl: 168h0m0s
