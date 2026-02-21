@@ -9,7 +9,4 @@ spec:
     defaultVolumesToFsBackup: true
     includedNamespaces:
       - servarr
-    excludedPVCs:
-      - namespace: servarr
-        name: servarr-jellyfin-media
     ttl: 168h0m0s
