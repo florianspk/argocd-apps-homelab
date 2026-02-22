@@ -5,7 +5,7 @@
   "destNamespace": "observability",
   "chartRepoURL": "https://grafana.github.io/helm-charts",
   "chart": "loki",
-  "chartVersion": "6.52.0",
+  "chartVersion": "6.53.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "monitoring/loki/values.yaml",
   "valuesGitRef": "HEAD"
