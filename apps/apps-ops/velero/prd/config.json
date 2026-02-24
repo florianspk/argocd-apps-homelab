@@ -5,7 +5,7 @@
   "destNamespace": "velero",
   "chartRepoURL": "https://vmware-tanzu.github.io/helm-charts",
   "chart": "velero",
-  "chartVersion": "11.3.2",
+  "chartVersion": "11.4.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/velero/values.yaml",
   "valuesGitRef": "HEAD"
