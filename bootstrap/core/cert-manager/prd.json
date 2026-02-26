@@ -5,7 +5,7 @@
   "destNamespace": "cert-manager",
   "chartRepoURL": "https://charts.jetstack.io",
   "chart": "cert-manager",
-  "chartVersion": "v1.19.3",
+  "chartVersion": "v1.19.4",
   "valuesPath": "helm/cert-manager-values.yaml",
   "valuesGitRepo": "https://github.com/florianspk/home-lab-talos.git",
   "valuesGitRef": "HEAD"
