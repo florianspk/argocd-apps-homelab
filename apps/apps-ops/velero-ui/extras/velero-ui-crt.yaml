@@ -1,0 +1,21 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: velero-ui-tls
+spec:
+  commonName: velero ui server
+  dnsNames:
+    - "velero-ui.wheezy.lab"
+  duration: 4320h
+  issuerRef:
+    kind: ClusterIssuer
+    name: ingress
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  secretName: velero-ui-tls
+  subject:
+    organizationalUnits:
+      - Kubernetes
+    organizations:
+      - wheezy.lab
