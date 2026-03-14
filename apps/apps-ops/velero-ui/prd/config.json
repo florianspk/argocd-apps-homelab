@@ -1,0 +1,12 @@
+{
+  "appName": "velero-ui",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "velero",
+  "chartRepoURL": "https://helm.otwld.com/",
+  "chart": "velero-ui",
+  "chartVersion": "0.14.0",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/velero-ui/values.yaml",
+  "valuesGitRef": "HEAD"
+}
