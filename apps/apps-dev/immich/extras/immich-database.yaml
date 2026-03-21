@@ -3,7 +3,7 @@ kind: Cluster
 metadata:
   name: immich-database
 spec:
-  instances: 1
+  instances: 2
   storage:
     size: 20Gi
   imageName: ghcr.io/tensorchord/cloudnative-vectorchord:16.9-0.4.3
