@@ -1,0 +1,12 @@
+{
+  "appName": "piraeus-datastore",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "snapshot-controller",
+  "chartRepoURL": "https://piraeus.io/helm-charts/",
+  "chart": "snapshot-controller",
+  "chartVersion": "5.0.3",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "ops/piraeus-datastore/values.yaml",
+  "valuesGitRef": "HEAD"
+}
