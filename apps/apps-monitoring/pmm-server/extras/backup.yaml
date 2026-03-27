@@ -6,7 +6,8 @@ metadata:
 spec:
   schedule: "0 1 * * *"
   template:
-    defaultVolumesToFsBackup: true
+    defaultVolumesToFsBackup: false
+    snapshotMoveData: true
     includedNamespaces:
       - observability
     ttl: 168h0m0s
