@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: restore-resource-modifier
+data:
+  patch.yaml: |
+    version: v1
+    resourceModifierRules:
+    - conditions:
+        groupResource: persistentvolumeclaims
+      patches:
+      - operation: remove
+        path: "/spec/selector"

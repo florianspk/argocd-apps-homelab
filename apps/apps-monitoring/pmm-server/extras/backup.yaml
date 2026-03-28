@@ -10,4 +10,10 @@ spec:
     snapshotMoveData: true
     includedNamespaces:
       - observability
+    excludedResources:
+      - deployments
+      - services
+      - ingresses
+      - configmaps
+      - serviceaccounts
     ttl: 168h0m0s
