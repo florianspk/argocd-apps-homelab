@@ -5,7 +5,7 @@
   "destServer": "https://kubernetes.default.svc",
   "chartRepoURL": "https://nextcloud.github.io/helm/",
   "chart": "nextcloud",
-  "chartVersion": "9.0.3",
+  "chartVersion": "9.0.4",
   "valuesPath": "dev/nextcloud/values.yaml",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesGitRef": "HEAD"
