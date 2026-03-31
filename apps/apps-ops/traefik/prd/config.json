@@ -5,7 +5,7 @@
   "destNamespace": "cloudflare-tunnel",
   "chartRepoURL": "https://traefik.github.io/charts",
   "chart": "traefik",
-  "chartVersion": "39.0.6",
+  "chartVersion": "39.0.7",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/traefik/values.yaml",
   "valuesGitRef": "HEAD"
