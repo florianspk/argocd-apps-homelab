@@ -1,0 +1,12 @@
+{
+  "appName": "prometheus-operator",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "prometheus-operator",
+  "chartRepoURL": "https://prometheus-community.github.io/helm-charts",
+  "chart": "prometheus-operator",
+  "chartVersion": "1.6.0",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "monitoring/prometheus-operator/values.yaml",
+  "valuesGitRef": "HEAD"
+}
