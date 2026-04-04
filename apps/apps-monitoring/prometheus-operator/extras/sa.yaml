@@ -1,6 +1,0 @@
-# prometheus-rbac.yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: prometheus
-  namespace: observability
