@@ -2,53 +2,21 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nextcloud-public
-  annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   ingressClassName: traefik-pub
   rules:
     - host: drive.wheezy.fr
       http:
         paths:
-          - path: /s/
-            pathType: Prefix
-            backend:
-              service:
-                name: nextcloud
-                port:
-                  number: 8080
-          - path: /index.php/s/
-            pathType: Prefix
-            backend:
-              service:
-                name: nextcloud
-                port:
-                  number: 8080
-          - path: /apps/
-            pathType: Prefix
-            backend:
-              service:
-                name: nextcloud
-                port:
-                  number: 8080
-          - path: /core/
-            pathType: Prefix
-            backend:
-              service:
-                name: nextcloud
-                port:
-                  number: 8080
-          - path: /themes/
-            pathType: Prefix
-            backend:
-              service:
-                name: nextcloud
-                port:
-                  number: 8080
-          - path: /ocs/
-            pathType: Prefix
-            backend:
-              service:
-                name: nextcloud
-                port:
-                  number: 8080
+          - {
+              path: /s/,
+              pathType: Prefix,
+              backend:
+                &svc { service: { name: nextcloud, port: { number: 8080 } } },
+            }
+          - { path: /index.php/s/, pathType: Prefix, backend: *svc }
+          - { path: /apps/, pathType: Prefix, backend: *svc }
+          - { path: /core/, pathType: Prefix, backend: *svc }
+          - { path: /themes/, pathType: Prefix, backend: *svc }
+          - { path: /dist/, pathType: Prefix, backend: *svc }
+          - { path: /public.php/, pathType: Prefix, backend: *svc }

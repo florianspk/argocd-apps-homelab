@@ -1,0 +1,12 @@
+{
+  "appName": "pg-common",
+  "env": "prd",
+  "destServer": "https://kubernetes.default.svc",
+  "destNamespace": "common",
+  "chartRepoURL": "https://cloudnative-pg.io/charts/",
+  "chart": "cluster",
+  "chartVersion": "0.6.*",
+  "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
+  "valuesPath": "dev/pg-common/values.yaml",
+  "valuesGitRef": "HEAD"
+}
