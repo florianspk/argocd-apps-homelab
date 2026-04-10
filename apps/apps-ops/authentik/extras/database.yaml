@@ -5,6 +5,6 @@ metadata:
   namespace: common
 spec:
   name: authentik
-  owner: authentik
+  owner: authentik_user
   cluster:
     name: pg-common-cluster
