@@ -1,0 +1,119 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: authentik-custom-templates
+data:
+  login.html: |
+    {% extends "flows/base.html" %}
+    {% block body %}
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #080c10 !important; font-family: 'DM Mono', monospace; }
+    .pf-c-background-image { display: none; }
+    .pf-c-page { background: transparent; }
+    .pf-c-login {
+      display: grid !important;
+      grid-template-columns: 1fr 420px !important;
+      min-height: 100vh !important;
+      background: #080c10 !important;
+      max-width: 100% !important;
+    }
+    .pf-c-login::before {
+      content: '';
+      display: block;
+      background:
+        linear-gradient(rgba(99,190,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,190,255,0.04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      position: relative;
+    }
+    .pf-c-login::after {
+      content: 'Wheezy · Homelab\AAccès\Asécurisé\Aà l'infra.';
+      white-space: pre;
+      position: absolute;
+      left: 48px;
+      bottom: 48px;
+      font-family: 'Syne', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #f1f5f9;
+      line-height: 1.1;
+      pointer-events: none;
+    }
+    .pf-c-login__main {
+      background: #0d1117 !important;
+      border-left: 1px solid rgba(255,255,255,0.05) !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 52px 44px !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .pf-c-login__header { display: none !important; }
+    .pf-c-login__main-header { text-align: left !important; margin-bottom: 28px; }
+    .pf-c-title {
+      font-family: 'Syne', sans-serif !important;
+      font-size: 22px !important;
+      font-weight: 600 !important;
+      color: #e2e8f0 !important;
+    }
+    .pf-c-login__main-header-desc { color: rgba(148,163,184,0.4) !important; font-size: 11px !important; }
+    .pf-c-form__label-text {
+      font-size: 10px !important;
+      letter-spacing: 0.14em !important;
+      text-transform: uppercase !important;
+      color: rgba(148,163,184,0.5) !important;
+    }
+    .pf-c-form-control {
+      background: rgba(255,255,255,0.03) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 6px !important;
+      color: #e2e8f0 !important;
+      font-family: 'DM Mono', monospace !important;
+      font-size: 13px !important;
+    }
+    .pf-c-form-control:focus {
+      border-color: rgba(59,130,246,0.4) !important;
+      box-shadow: 0 0 0 2px rgba(59,130,246,0.1) !important;
+    }
+    .pf-c-button.pf-m-primary {
+      background: #1d4ed8 !important;
+      border: none !important;
+      border-radius: 6px !important;
+      font-family: 'DM Mono', monospace !important;
+      font-size: 12px !important;
+      letter-spacing: 0.1em !important;
+      text-transform: uppercase !important;
+      width: 100% !important;
+    }
+    .pf-c-button.pf-m-primary:hover { background: #2563eb !important; }
+    .pf-c-login__main-footer { margin-top: 24px; }
+    .pf-c-login__main-footer-band { color: rgba(148,163,184,0.25) !important; font-size: 10px !important; }
+    </style>
+
+    <div class="pf-c-login">
+      <div style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:48px;overflow:hidden;">
+        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(99,190,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,190,255,0.04) 1px,transparent 1px);background-size:40px 40px;"></div>
+        <div style="position:absolute;width:340px;height:340px;background:radial-gradient(circle,rgba(59,130,246,0.18) 0%,transparent 70%);top:-60px;left:-60px;filter:blur(80px);pointer-events:none;"></div>
+        <div style="position:absolute;width:280px;height:280px;background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%);bottom:80px;right:20px;filter:blur(80px);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(148,163,184,0.6);margin-bottom:20px;">Wheezy · Homelab</div>
+          <div style="font-family:'Syne',sans-serif;font-size:36px;font-weight:700;color:#f1f5f9;line-height:1.1;margin-bottom:16px;">Accès<br><span style="color:#3b82f6;">sécurisé</span><br>à l'infra.</div>
+          <div style="font-size:12px;color:rgba(148,163,184,0.5);line-height:1.7;">Authentification centralisée<br>pour tous les services internes.</div>
+          <div style="display:flex;gap:8px;margin-top:28px;flex-wrap:wrap;">
+            <span style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,190,255,0.5);border:1px solid rgba(99,190,255,0.15);padding:4px 10px;border-radius:3px;">Kubernetes</span>
+            <span style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,190,255,0.5);border:1px solid rgba(99,190,255,0.15);padding:4px 10px;border-radius:3px;">GitOps</span>
+            <span style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,190,255,0.5);border:1px solid rgba(99,190,255,0.15);padding:4px 10px;border-radius:3px;">Cilium</span>
+            <span style="font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(99,190,255,0.5);border:1px solid rgba(99,190,255,0.15);padding:4px 10px;border-radius:3px;">LINSTOR</span>
+          </div>
+        </div>
+      </div>
+      <div class="pf-c-login__main">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    {% endblock %}
