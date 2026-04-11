@@ -2,72 +2,100 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: authentik-custom-templates
+  namespace: authentik
 data:
   login.html: |
     {% extends "flows/base.html" %}
     {% block body %}
     <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700&display=swap');
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: #080c10 !important; font-family: 'DM Mono', monospace; }
-    .pf-c-background-image { display: none; }
-    .pf-c-page { background: transparent; }
-    .pf-c-login {
-      display: grid !important;
-      grid-template-columns: 1fr 420px !important;
-      min-height: 100vh !important;
+
+    body, html {
       background: #080c10 !important;
-      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
-    .pf-c-login::before {
-      content: '';
-      display: block;
-      background:
-        linear-gradient(rgba(99,190,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(99,190,255,0.04) 1px, transparent 1px);
-      background-size: 40px 40px;
-      position: relative;
+
+    .pf-c-background-image { display: none !important; }
+
+    .pf-c-page__drawer,
+    .pf-c-drawer,
+    .pf-c-drawer__main,
+    .pf-c-drawer__content,
+    .pf-c-drawer__body {
+      background: #080c10 !important;
+      min-height: 100vh;
+      padding: 0 !important;
+      margin: 0 !important;
     }
-    .pf-c-login::after {
-      content: 'Wheezy · Homelab\AAccès\Asécurisé\Aà l'infra.';
-      white-space: pre;
-      position: absolute;
-      left: 48px;
-      bottom: 48px;
-      font-family: 'Syne', sans-serif;
-      font-size: 36px;
-      font-weight: 700;
-      color: #f1f5f9;
-      line-height: 1.1;
-      pointer-events: none;
+
+    :root {
+      --ak-global--background-image: none !important;
     }
-    .pf-c-login__main {
+
+    ak-flow-executor {
+      display: contents !important;
+    }
+
+    .pf-c-login {
       background: #0d1117 !important;
-      border-left: 1px solid rgba(255,255,255,0.05) !important;
+      border-left: 1px solid rgba(255,255,255,0.07) !important;
       border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      min-height: 100vh !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: stretch !important;
+      width: 100% !important;
+    }
+
+    .pf-c-login__main {
+      background: transparent !important;
       box-shadow: none !important;
       padding: 52px 44px !important;
       margin: 0 !important;
+      width: 100% !important;
       max-width: 100% !important;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
-    .pf-c-login__header { display: none !important; }
-    .pf-c-login__main-header { text-align: left !important; margin-bottom: 28px; }
+
+    .pf-c-login__header {
+      display: none !important;
+    }
+
+    .pf-c-login__main-header {
+      text-align: left !important;
+      margin-bottom: 28px !important;
+      padding: 0 !important;
+    }
+
     .pf-c-title {
       font-family: 'Syne', sans-serif !important;
       font-size: 22px !important;
       font-weight: 600 !important;
       color: #e2e8f0 !important;
     }
-    .pf-c-login__main-header-desc { color: rgba(148,163,184,0.4) !important; font-size: 11px !important; }
+
+    .pf-c-login__main-header-desc {
+      color: rgba(148,163,184,0.4) !important;
+      font-size: 11px !important;
+      margin-top: 6px !important;
+    }
+
     .pf-c-form__label-text {
       font-size: 10px !important;
       letter-spacing: 0.14em !important;
       text-transform: uppercase !important;
       color: rgba(148,163,184,0.5) !important;
+      font-family: 'DM Mono', monospace !important;
     }
+
+    .pf-c-form__label {
+      margin-bottom: 6px !important;
+    }
+
     .pf-c-form-control {
       background: rgba(255,255,255,0.03) !important;
       border: 1px solid rgba(255,255,255,0.08) !important;
@@ -75,11 +103,20 @@ data:
       color: #e2e8f0 !important;
       font-family: 'DM Mono', monospace !important;
       font-size: 13px !important;
+      padding: 10px 14px !important;
+      height: auto !important;
     }
+
+    .pf-c-form-control::placeholder {
+      color: rgba(148,163,184,0.2) !important;
+    }
+
     .pf-c-form-control:focus {
       border-color: rgba(59,130,246,0.4) !important;
       box-shadow: 0 0 0 2px rgba(59,130,246,0.1) !important;
+      outline: none !important;
     }
+
     .pf-c-button.pf-m-primary {
       background: #1d4ed8 !important;
       border: none !important;
@@ -89,15 +126,41 @@ data:
       letter-spacing: 0.1em !important;
       text-transform: uppercase !important;
       width: 100% !important;
+      padding: 13px !important;
+      margin-top: 8px !important;
+      color: #fff !important;
+      cursor: pointer !important;
+      transition: background 0.2s !important;
     }
-    .pf-c-button.pf-m-primary:hover { background: #2563eb !important; }
-    .pf-c-login__main-footer { margin-top: 24px; }
-    .pf-c-login__main-footer-band { color: rgba(148,163,184,0.25) !important; font-size: 10px !important; }
+
+    .pf-c-button.pf-m-primary:hover {
+      background: #2563eb !important;
+    }
+
+    .pf-c-login__main-footer {
+      margin-top: 24px !important;
+      padding: 0 !important;
+    }
+
+    .pf-c-login__main-footer-band {
+      color: rgba(148,163,184,0.25) !important;
+      font-size: 10px !important;
+      text-align: left !important;
+    }
+
+    .pf-c-login__main-footer-band a {
+      color: rgba(148,163,184,0.35) !important;
+    }
+
+    .pf-c-login__footer {
+      display: none !important;
+    }
     </style>
 
-    <div class="pf-c-login">
-      <div style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:48px;overflow:hidden;">
-        <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(99,190,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,190,255,0.04) 1px,transparent 1px);background-size:40px 40px;"></div>
+    <div style="display:grid;grid-template-columns:1fr 440px;min-height:100vh;background:#080c10;font-family:'DM Mono',monospace;">
+
+      <!-- Panneau gauche -->
+      <div style="position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:48px;overflow:hidden;background-image:linear-gradient(rgba(99,190,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,190,255,0.04) 1px,transparent 1px);background-size:40px 40px;background-color:#080c10;">
         <div style="position:absolute;width:340px;height:340px;background:radial-gradient(circle,rgba(59,130,246,0.18) 0%,transparent 70%);top:-60px;left:-60px;filter:blur(80px);pointer-events:none;"></div>
         <div style="position:absolute;width:280px;height:280px;background:radial-gradient(circle,rgba(139,92,246,0.12) 0%,transparent 70%);bottom:80px;right:20px;filter:blur(80px);pointer-events:none;"></div>
         <div style="position:relative;z-index:1;">
@@ -112,8 +175,11 @@ data:
           </div>
         </div>
       </div>
-      <div class="pf-c-login__main">
+
+      <!-- Panneau droit -->
+      <div style="background:#0d1117;border-left:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;justify-content:center;padding:52px 44px;min-height:100vh;">
         {% block content %}{% endblock %}
       </div>
+
     </div>
     {% endblock %}
