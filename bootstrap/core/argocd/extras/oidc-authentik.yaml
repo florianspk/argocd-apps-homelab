@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: oidc-authentik
+  namespace: argocd
+spec:
+  encryptedData:
+    clientSecret: AgBJKnj3atnozSiqugneIr6+3Yg2Hb/prMZ5MtHRJQun7O6tu7n06aSlCZsqxGUkQlT3MNINqipUeyzR9okYcyZbCAkG3tiFTe6yJaBl/JhQes2ckYKCveVkxY3wbTHo5kc5HFXzSZXHYZ14kABkpbqC/qcJCbs9M/+DWAO/RdR+G/ZCSmPfj/u3oJd30dZv2UaREE/cTOmtd1LtKCJ1c3Ni/39MDG5IMSvzQRG8XT6g3bmyoNeWJ84ahMtBLYLa15cWw+18iZym5JaQcNOEr7yQ1zF0Vk+rxoKlshgGx8ihr7E0Yl8mVNNN+BBM3ocunr9P1c1vL0ys2q12mcj6hFry62e6p5t7DBQFsjGt50K3fkAVd2VTireEIuXzk/W7Svk7Z7+EK/b2BDFLXleR6kaOXd98VdBrRaDg64vQoH+71NaDJe2g6d+1CrvxdqEcLkwYCtaxuN4rCgzct/IRcTi5cTKA2ExUBVT56AyoTWSdnqO1YBRVkWCkdrz09qfoOcCLdRedNEIKFJIO2kOaLppMZZ0969683+VZTOe7TpQRWpDG48utRhpVN8G12vpJKhviUALgoRCYcKbqRt1FUKfMZ/nJM2i7ZQcgQGhFBFMxwZAofWgcdVGioYZ5Vq///VcWFytX+9UlBWa2CuX84ds2KvVqO8MQkc+tWUrrls+Pjnf+J0pyDBrBWXR/vadMEw3MrYsrMXr86WyZqmZbosanz3xFo9LcMlwu+FK5N2SLVaO52w8lV/0hhKEweJvCMVa2Xlr0oX/BS2HPSYzk41xuSXPA+kJKMXQSqXXg2McD07JBXJIW6Ot0KlvOnZguqWT+Wn9jTr6QT/5yC32Bi8Vg3tZ4ZWsg2W+Ane9MDbA3Qg==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: oidc-authentik
+      namespace: argocd
+    type: Opaque
+
