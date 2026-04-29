@@ -15,3 +15,4 @@ spec:
       - configmaps
       - serviceaccounts
     ttl: 168h0m0s
+    defaultVolumesToFsBackup: true
