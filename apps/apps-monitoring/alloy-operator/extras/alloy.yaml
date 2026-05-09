@@ -1,104 +1,69 @@
 apiVersion: collectors.grafana.com/v1alpha1
 kind: Alloy
 metadata:
-  name: alloy-all-logs-advanced
+  name: alloy-all-logs
   namespace: observability
 spec:
+  controller:
+    type: daemonset
+    tolerations:
+      - effect: NoSchedule
+        operator: Exists
   alloy:
+    mounts:
+      varlog: true
     configMap:
       content: |-
-        // ============================================
-        // Collecte des logs des pods
-        // ============================================
-
+        // Discovery de tous les pods
         discovery.kubernetes "pods" {
           role = "pod"
         }
 
-        loki.source.kubernetes "pods" {
-          targets    = discovery.kubernetes.pods.targets
-          forward_to = [loki.process.pods.receiver]
+        // Relabeling : path vers les fichiers + labels utiles
+        discovery.relabel "pod_logs" {
+          targets = discovery.kubernetes.pods.targets
+
+          rule {
+            source_labels = ["__meta_kubernetes_namespace"]
+            target_label  = "namespace"
+          }
+          rule {
+            source_labels = ["__meta_kubernetes_pod_name"]
+            target_label  = "pod"
+          }
+          rule {
+            source_labels = ["__meta_kubernetes_pod_container_name"]
+            target_label  = "container"
+          }
+          rule {
+            source_labels = ["__meta_kubernetes_pod_label_app_kubernetes_io_name"]
+            target_label  = "app"
+          }
+          rule {
+            source_labels = ["__meta_kubernetes_pod_uid", "__meta_kubernetes_pod_container_name"]
+            separator     = "/"
+            replacement   = "/var/log/pods/*$1/*.log"
+            target_label  = "__path__"
+          }
         }
 
-        loki.process "pods" {
-          // Labels de base
+        // Lecture des logs via l'API K8s (stdout/stderr)
+        loki.source.kubernetes "pod_logs" {
+          targets    = discovery.relabel.pod_logs.output
+          forward_to = [loki.process.pod_logs.receiver]
+        }
+
+        // Ajout du label cluster
+        loki.process "pod_logs" {
           stage.static_labels {
             values = {
               cluster = "wheezylab",
             }
           }
-
-          // Extraction des labels K8s
-          stage.labels {
-            values = {
-              namespace = "",
-              pod       = "",
-              container = "",
-              node      = "",
-              app       = "",
-            }
-          }
-
-          // Détection du niveau de log (ERROR, WARN, INFO, etc.)
-          stage.regex {
-            expression = "(?P<level>ERROR|WARN|WARNING|INFO|DEBUG|FATAL|TRACE)"
-          }
-
-          stage.labels {
-            values = {
-              level = "",
-            }
-          }
-
           forward_to = [loki.write.loki.receiver]
         }
 
-        // ============================================
-        // Collecte des events K8s
-        // ============================================
-
-        loki.source.kubernetes_events "events" {
-          job_name   = "kubernetes-events"
-          log_format = "logfmt"
-
-          namespaces = []  // Vide = tous les namespaces
-
-          forward_to = [loki.process.events.receiver]
-        }
-
-        loki.process "events" {
-          stage.static_labels {
-            values = {
-              cluster = "wheezylab",
-              job     = "kubernetes-events",
-            }
-          }
-
-          // Extraction du type d'event
-          stage.logfmt {
-            mapping = {
-              "type"      = "",
-              "reason"    = "",
-              "object"    = "",
-              "namespace" = "",
-            }
-          }
-
-          stage.labels {
-            values = {
-              type      = "",
-              reason    = "",
-              namespace = "",
-            }
-          }
-
-          forward_to = [loki.write.loki.receiver]
-        }
-
-        // ============================================
         // Envoi vers Loki
-        // ============================================
-
         loki.write "loki" {
           endpoint {
             url = "http://loki-gateway.observability.svc.cluster.local/loki/api/v1/push"
