@@ -5,7 +5,7 @@
   "destNamespace": "common",
   "chartRepoURL": "https://cloudnative-pg.io/charts/",
   "chart": "cluster",
-  "chartVersion": "0.6.*",
+  "chartVersion": "0.7.*",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "dev/pg-common/values.yaml",
   "valuesGitRef": "HEAD"
