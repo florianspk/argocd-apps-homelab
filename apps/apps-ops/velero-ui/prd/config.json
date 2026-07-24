@@ -5,7 +5,7 @@
   "destNamespace": "velero",
   "chartRepoURL": "https://helm.otwld.com/",
   "chart": "velero-ui",
-  "chartVersion": "0.14.0",
+  "chartVersion": "0.15.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/velero-ui/values.yaml",
   "valuesGitRef": "HEAD"
