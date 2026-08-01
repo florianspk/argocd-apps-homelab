@@ -5,7 +5,7 @@
   "destNamespace": "piraeus-datastore",
   "chartRepoURL": "https://piraeus.io/helm-charts/",
   "chart": "snapshot-controller",
-  "chartVersion": "5.1.1",
+  "chartVersion": "5.2.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/snapshot-controller/values.yaml",
   "valuesGitRef": "HEAD"
