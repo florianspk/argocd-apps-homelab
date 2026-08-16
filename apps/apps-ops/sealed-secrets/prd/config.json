@@ -3,7 +3,7 @@
   "env": "prd",
   "destServer": "https://kubernetes.default.svc",
   "destNamespace": "kube-system",
-  "chartRepoURL": "https://bitnami-labs.github.io/sealed-secrets/",
+  "chartRepoURL": "https://bitnami.github.io/sealed-secrets",
   "chart": "sealed-secrets",
   "chartVersion": "2.18.6",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
