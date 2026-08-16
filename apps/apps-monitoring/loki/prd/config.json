@@ -8,5 +8,6 @@
   "chartVersion": "7.2.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "monitoring/loki/values.yaml",
-  "valuesGitRef": "HEAD"
+  "valuesGitRef": "HEAD",
+  "serverSideApply": true
 }

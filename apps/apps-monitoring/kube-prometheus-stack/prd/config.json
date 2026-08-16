@@ -8,5 +8,6 @@
   "chartVersion": "88.*",
   "valuesPath": "monitoring/kube-prometheus-stack/values.yaml",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
-  "valuesGitRef": "HEAD"
+  "valuesGitRef": "HEAD",
+  "serverSideApply": true
 }

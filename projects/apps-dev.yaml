@@ -7,6 +7,7 @@ metadata:
   name: apps-dev
   namespace: argocd
 spec:
+  goTemplate: true
   generators:
     - git:
         files:
@@ -22,37 +23,38 @@ spec:
   syncPolicy: {}
   template:
     metadata:
-      name: "{{ appName }}-{{ env }}"
+      name: "{{ .appName }}-{{ .env }}"
       namespace: argocd
       labels:
         app.kubernetes.io/type: "apps-dev"
-        app.kubernetes.io/name: "{{ appName }}"
-        app.kubernetes.io/env: "{{ env }}"
+        app.kubernetes.io/name: "{{ .appName }}"
+        app.kubernetes.io/env: "{{ .env }}"
     spec:
       project: default
       destination:
-        server: "{{ destServer }}"
-        namespace: "{{ destNamespace }}"
+        server: "{{ .destServer }}"
+        namespace: "{{ .destNamespace }}"
       sources:
-        - repoURL: "{{ chartRepoURL }}"
-          chart: "{{ chart }}"
-          targetRevision: "{{ chartVersion }}"
+        - repoURL: "{{ .chartRepoURL }}"
+          chart: "{{ .chart }}"
+          targetRevision: "{{ .chartVersion }}"
           helm:
-            releaseName: "{{appName}}"
+            releaseName: "{{ .appName }}"
             valueFiles:
-              - $values/{{ valuesPath }}
-        - repoURL: "{{ valuesGitRepo }}"
-          targetRevision: "{{ valuesGitRef }}"
+              - $values/{{ .valuesPath }}
+        - repoURL: "{{ .valuesGitRepo }}"
+          targetRevision: "{{ .valuesGitRef }}"
           ref: values
         - repoURL: https://github.com/florianspk/argocd-apps-homelab.git
           targetRevision: HEAD
-          path: apps/apps-dev/{{appName}}/extras
+          path: apps/apps-dev/{{ .appName }}/extras
           directory:
             recurse: true
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
           - ApplyOutOfSyncOnly=true
+          - ServerSideApply={{ if .serverSideApply }}true{{ else }}false{{ end }}
         automated:
           prune: false
           selfHeal: true

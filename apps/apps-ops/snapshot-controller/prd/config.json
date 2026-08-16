@@ -8,5 +8,6 @@
   "chartVersion": "5.2.0",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/snapshot-controller/values.yaml",
-  "valuesGitRef": "HEAD"
+  "valuesGitRef": "HEAD",
+  "serverSideApply": true
 }

@@ -8,5 +8,6 @@
   "chartVersion": "0.6.2",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "monitoring/alloy-operator/values.yaml",
-  "valuesGitRef": "HEAD"
+  "valuesGitRef": "HEAD",
+  "serverSideApply": true
 }

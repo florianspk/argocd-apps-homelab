@@ -8,5 +8,6 @@
   "chartVersion": "0.29.*",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/cloudnative-pg/values.yaml",
-  "valuesGitRef": "HEAD"
+  "valuesGitRef": "HEAD",
+  "serverSideApply": true
 }

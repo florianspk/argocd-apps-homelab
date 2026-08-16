@@ -8,5 +8,6 @@
   "chartVersion": "2.18.6",
   "valuesGitRepo": "git@github.com:florianspk/values-apps.git",
   "valuesPath": "ops/sealed-secrets/values.yaml",
-  "valuesGitRef": "HEAD"
+  "valuesGitRef": "HEAD",
+  "serverSideApply": true
 }
