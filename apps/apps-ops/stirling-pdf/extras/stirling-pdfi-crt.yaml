@@ -13,7 +13,7 @@ spec:
   privateKey:
     algorithm: ECDSA
     size: 256
-  secretName: stirling-pdf-tls
+  secretName: stirling-pdf
   subject:
     organizationalUnits:
       - Kubernetes
