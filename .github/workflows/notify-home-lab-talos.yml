@@ -1,0 +1,44 @@
+# Prévient florianspk/home-lab-talos qu'un chart bootstrappé par Talos a changé sur main
+# (PR Renovate mergée ou commit direct). Le workflow renovate-sync de home-lab-talos
+# relit lui-même les versions sur main ici : aucune donnée de la PR n'est transmise ni
+# interprétée. Si ce dispatch échoue ou si le secret est absent, le cron de rattrapage
+# de home-lab-talos (toutes les 6 h) fait le même travail.
+name: notify-home-lab-talos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - bootstrap/core/cilium/prd.json
+      - bootstrap/core/cert-manager/prd.json
+      - bootstrap/core/trust-manager/prd.json
+      - bootstrap/core/argocd/prd.json
+      - bootstrap/core/reloader/prd.json
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: notify-home-lab-talos
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    name: dispatch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: repository_dispatch vers home-lab-talos
+        env:
+          # PAT fine-grained limité à florianspk/home-lab-talos (Contents: Read and write).
+          GH_TOKEN: ${{ secrets.RENOVATE_SYNC_TOKEN }}
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::Secret RENOVATE_SYNC_TOKEN absent : home-lab-talos se synchronisera via son cron"
+            exit 0
+          fi
+          gh api --method POST repos/florianspk/home-lab-talos/dispatches \
+            -f event_type=argocd-apps-homelab-updated \
+            -f "client_payload[sha]=$SOURCE_SHA"
+          echo "Dispatch envoyé pour $SOURCE_SHA"
